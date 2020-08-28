@@ -48,18 +48,39 @@
       * [Линейный без смещения](https://github.com/AIFramework/AI_Free/wiki/LinearLayer)
       * [Сверточный 2D](https://github.com/AIFramework/AI_Free/wiki/ConvolutionLayer)
       * [MaxPooling2D](https://github.com/AIFramework/AI_Free/wiki/MaxPooling)
+      * Unpooling
       * [UpSampling с бикубической интерполяцией](https://github.com/AIFramework/AI_Free/wiki/Upsampling2dBicibic)
       * [Flatten](https://github.com/AIFramework/AI_Free/wiki/Flatten)
+      * GRU
+      * LSTM
+      * RNN
+      * FilterCell
+      * FilterLayer
+      * Activation
     * Активационные функции
       * [ReLU и pReLU](https://github.com/AIFramework/AI_Free/wiki/ReLU)
       * [Линейный](https://github.com/AIFramework/AI_Free/wiki/LinearUnit)
       * [Софтмакс](https://github.com/AIFramework/AI_Free/wiki/SoftmaxUnit)
       * [Гиперболический тангенс](https://github.com/AIFramework/AI_Free/wiki/TanhUnit) 
       * [Сигмоидальный](https://github.com/AIFramework/AI_Free/wiki/SigmoidUnit)
+      * Арктангенс
+      * ElliotSig
+      * Гауссова РБФ
+      * SQN
+      * SQ-RBF
+      * PLU
     * Функции ошибки
       * [CrossEntropyWithSoftmax](https://github.com/AIFramework/AI_Free/wiki/CrossEntropyWithSoftmax)
       * [LossMeanSqrSqrt](https://github.com/AIFramework/AI_Free/wiki/LossMeanSqrSqrt)
       * [LossSumOfSquares](https://github.com/AIFramework/AI_Free/wiki/LossSumOfSquares)  
+    * Оптимизаторы
+      * SGD
+      * Nesterov
+      * Adagrad
+      * Adadelta
+      * RmsProp
+      * Adam
+      * Adamax
  
 
    * #### Цифровая обработка сигналов
