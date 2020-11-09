@@ -44,12 +44,16 @@
 
   * ##### Нейронные сети
     * Слои: 
-      * [Полносвязный](https://github.com/AIFramework/AI_Free/wiki/FeedForwardLayer)
-      * [Линейный без смещения](https://github.com/AIFramework/AI_Free/wiki/LinearLayer)
-      * [Сверточный 2D](https://github.com/AIFramework/AI_Free/wiki/ConvolutionLayer)
-      * [MaxPooling2D](https://github.com/AIFramework/AI_Free/wiki/MaxPooling)
-      * Unpooling
-      * [UpSampling с бикубической интерполяцией](https://github.com/AIFramework/AI_Free/wiki/Upsampling2dBicibic)
+      * [Fully connected](https://github.com/AIFramework/AI_Free/wiki/FeedForwardLayer)
+      * [Linear without bias](https://github.com/AIFramework/AI_Free/wiki/LinearLayer)
+      * [Convolution 2D](https://github.com/AIFramework/AI_Free/wiki/ConvolutionLayer)
+      * [MaxPooling 2D](https://github.com/AIFramework/AI_Free/wiki/MaxPooling)
+      * Unpooling 2D
+      * [UpSampling2D с бикубической интерполяцией](https://github.com/AIFramework/AI_Free/wiki/Upsampling2dBicibic)
+      * Conv 1D
+      * Pooling 1D
+      * UpSampling 1D
+      * Feedforward complex
       * [Flatten](https://github.com/AIFramework/AI_Free/wiki/Flatten)
       * GRU
       * LSTM
