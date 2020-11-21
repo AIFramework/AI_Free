@@ -4619,7 +4619,14 @@
         </member>
         <member name="M:AI.FFT.TimeFrTransform(AI.Vector,System.Int32)">
             <summary>
-            Чачтотно-временное преобразование
+            Частотно-временное преобразование
+            </summary>
+            <param name="vect">Вектор</param>
+            <param name="lenFr">Размер фрейма</param>
+        </member>
+        <member name="M:AI.FFT.TimeFrTransformHalf(AI.Vector,System.Int32)">
+            <summary>
+            Частотно-временное преобразование
             </summary>
             <param name="vect">Вектор</param>
             <param name="lenFr">Размер фрейма</param>
@@ -5550,40 +5557,40 @@
             <param name="b"></param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICActiv.Forward(AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICActiv.Forward(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Прямой проход
             </summary>
             <param name="x">Тензор аргумента</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICActiv.Backward(AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICActiv.Backward(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Обратный проход
             </summary>
             <param name="x">Тензор аргумента</param>
         </member>
-        <member name="P:AI.ML.ComplexNet.Base.ICGraph.IsBackward">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph.IsBackward">
             <summary>
             Производится ли обратный проход
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Base.ICGraph.Backprop">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph.Backprop">
             <summary>
             Элементы обратного прохода
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICGraph.Backward">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph.Backward">
             <summary>
             Обратный проход (дифференцирование)
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICGraph.Restart(System.Boolean)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph.Restart(System.Boolean)">
             <summary>
             Перезагрузка
             </summary>
             <param name="isBacward"> Производится ли обратный проход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICGraph.NonLinear(AI.ML.ComplexNet.Base.ICActiv,AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph.NonLinear(AI.ML.NeuralNetwork.ComplexNet.Base.ICActiv,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Активационная функция
             </summary>
@@ -5591,43 +5598,43 @@
             <param name="t">Тензор к которому она применяется</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICGraph.Add(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph.Add(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Сложение двух тензоров
             </summary>
             <param name="t1">Первый тензор</param>
             <param name="t2">Второй тензор</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICGraph.FeedForwardLayer(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.Base.ICActiv)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph.FeedForwardLayer(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.Base.ICActiv)">
             <summary>
             Feedforward layer
             </summary>
         </member>
-        <member name="T:AI.ML.ComplexNet.Base.ICLoss">
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss">
             <summary>
             Loss function interface
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICLoss.Backward(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss.Backward(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Backward pass (taking derivative)
             </summary>
             <param name="actualOutput">Output value (actual)</param>
             <param name="targetOutput">Target value (ideal)</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICLoss.Measure(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss.Measure(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Error value
             </summary>
             <param name="actualOutput">Output value (actual)</param>
             <param name="targetOutput">Target value (ideal)</param>
         </member>
-        <member name="T:AI.ML.ComplexNet.Base.ICOptimizer">
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.Base.ICOptimizer">
             <summary>
             Optimizer
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICOptimizer.UpdateModelParams(AI.ML.ComplexNet.CNNW,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICOptimizer.UpdateModelParams(AI.ML.NeuralNetwork.ComplexNet.CNNW,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Updating parameters 
             </summary>
@@ -5638,355 +5645,496 @@
             <param name="L1">L1 regularization</param>
             <param name="L2">L2 regularization</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Base.ICOptimizer.Reset">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Base.ICOptimizer.Reset">
             <summary>
             Resetting Teaching Parameters
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CGraphCPU.IsBackward">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CGraphCPU.IsBackward">
             <summary>
             Включен ли обратный проход
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CGraphCPU.Backprop">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CGraphCPU.Backprop">
             <summary>
             Элементы обратного прохода
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CGraphCPU.#ctor">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CGraphCPU.#ctor">
             <summary>
             Граф автодифференцирования для ЦП
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CGraphCPU.#ctor(System.Boolean)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CGraphCPU.#ctor(System.Boolean)">
             <summary>
             Граф автодифференцирования для ЦП
             </summary>
             <param name="applyBackprop">Выполняется ли обратный проход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CGraphCPU.Backward">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CGraphCPU.Backward">
             <summary>
             Обратный проход
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CGraphCPU.Restart(System.Boolean)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CGraphCPU.Restart(System.Boolean)">
             <summary>
             Перезапуск графа
             </summary>
             <param name="isBacward">Включен ли обратный проход</param>
         </member>
-        <member name="P:AI.ML.ComplexNet.CNNW.Layers">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CNNW.Layers">
             <summary>
             Список слоев сети
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CNNW.InputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CNNW.InputShape">
             <summary>
             Input dimension
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CNNW.OutputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CNNW.OutputShape">
             <summary>
             Output dimension
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CNNW.TrainableParameters">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CNNW.TrainableParameters">
             <summary>
             Number of learning parameters
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.#ctor(System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.#ctor(System.Int32)">
             <summary>
             Класс нейронной сети
             </summary>
             <param name="seed">Сид генератора случ. чисел</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.#ctor(System.Collections.Generic.List{AI.ML.ComplexNet.Layers.ICLayer})">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.#ctor(System.Collections.Generic.List{AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer})">
             <summary>
             Класс нейронной сети
             </summary>
             <param name="layers">Список слоев</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.AddNewLayer(AI.ML.ComplexNet.Layers.ICLayer)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.AddNewLayer(AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer)">
             <summary>
             Добавление НОВОГО слоя в НС
             </summary>
             <param name="layer">Слой</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.AddNewLayer(AI.ML.NeuralNetwork.CoreNNW.Shape,AI.ML.ComplexNet.Layers.ICLayer)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.AddNewLayer(AI.ML.NeuralNetwork.CoreNNW.Shape,AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer)">
             <summary>
             Добавление НОВОГО слоя в НС
             </summary>
             <param name="inpShape">Размерность тензора входа</param>
             <param name="layer">Слой</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.Activate(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.Base.ICGraph)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.Activate(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph)">
             <summary>
             Прямой проход
             </summary>
             <param name="input">Вход</param>
             <param name="g">Граф автодифференцирования</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.ResetState">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.ResetState">
             <summary>
             Сброс состояния(нужно для рекуррентных)
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.GetParameters">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.GetParameters">
             <summary>
             Getting trained parameters
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.ToString">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.ToString">
             <summary>
             Layer description
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.ComplexNet.CNNW.Save(System.String)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CNNW.Save(System.String)">
             <summary>
             Сохранение нейросети
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="T:AI.ML.ComplexNet.DataStruct.CDataSequence">
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataSequence">
             <summary>
             Sequence data (for recurrent networks)
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.DataStruct.CDataSequence.Steps">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataSequence.Steps">
             <summary>
             Sequence of steps
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataSequence.#ctor">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataSequence.#ctor">
             <summary>
             Sequence data (for recurrent networks)
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataSequence.#ctor(System.Collections.Generic.List{AI.ML.ComplexNet.DataStruct.CDataStep})">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataSequence.#ctor(System.Collections.Generic.List{AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep})">
             <summary>
             Sequence data (for recurrent networks)
             </summary>
             <param name="steps">Collection of steps</param>
         </member>
-        <member name="P:AI.ML.ComplexNet.DataStruct.CDataset.InputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataset.InputShape">
             <summary>
             Input data dimension
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.DataStruct.CDataset.OutputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataset.OutputShape">
             <summary>
             Output data dimension
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.DataStruct.CDataset.LossFunction">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataset.LossFunction">
             <summary>
             Loss function
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.DataStruct.CDataset.Training">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataset.Training">
             <summary>
             Training dataset
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.DataStruct.CDataset.Validation">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataset.Validation">
             <summary>
             Validation dataset
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.DataStruct.CDataset.Testing">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataset.Testing">
             <summary>
             Test dataset
             </summary>
         </member>
-        <member name="F:AI.ML.ComplexNet.DataStruct.CDataStep.Input">
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.Input">
             <summary>
             Input data tensor
             </summary>
         </member>
-        <member name="F:AI.ML.ComplexNet.DataStruct.CDataStep.TargetOutput">
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.TargetOutput">
             <summary>
             Тензор идеального значения
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor">
             <summary>
             Шаг данных
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector,AI.Vector)">
-            <summary>
-            Шаг данных
-            </summary>
-            <param name="input">Вход</param>
-            <param name="targetOutput">Выход</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector,AI.Matrix)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector,AI.Vector)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector,AI.Tensor)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector,AI.Matrix)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix,AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector,AI.Tensor)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix,AI.Tensor)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix,AI.Vector)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix,AI.Matrix)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix,AI.Tensor)">
+            <summary>
+            Шаг данных
+            </summary>
+            <param name="input">Вход</param>
+            <param name="targetOutput">Выход</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix,AI.Matrix)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Input data vector</param>
             <param name="targetOutput">Вектор выхода</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor,AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor,AI.Vector)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor,AI.Tensor)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor,AI.Tensor)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor,AI.Matrix)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor,AI.Matrix)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(System.Double[],System.Double[])">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(System.Double[],System.Double[])">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
             <param name="targetOutput">Выход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(System.Double[])">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(System.Double[])">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Input data vector</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Input data tensor</param>
             <param name="targetOutput">Тензор выхода</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Input data tensor</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Vector)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Matrix)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataStep.#ctor(AI.Tensor)">
             <summary>
             Шаг данных
             </summary>
             <param name="input">Вход</param>
         </member>
-        <member name="T:AI.ML.ComplexNet.Layers.ICLayer">
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.fs">
             <summary>
-            Complex layer
+            Filter structure
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICLayer.InputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.StrideX">
             <summary>
-            Input dimension
+            X-axis stride
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICLayer.OutputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.StrideY">
             <summary>
-            Output dimension
+            Y-axis stride
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICLayer.TrainableParameters">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.PaddingX">
+            <summary>
+            Padding X-axis
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.PaddingY">
+            <summary>
+            Padding Y-axis
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.IsSame">
+            <summary>
+            Whether the dimension of the input is preserved
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.TrainableParameters">
             <summary>
             Number of learning parameters
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICLayer.Function">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.Numerator">
+            <summary>
+            Initializer numerator
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.AddDenInSqrt">
+            <summary>
+            Adding a value to the denominator under the root when initializing the weights
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.Function">
             <summary>
             Activation function
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICLayer.Activate(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.Base.ICGraph)">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.Bias">
+            <summary>
+            Offset weights
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.Filters">
+            <summary>
+            Filter tensors
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.InputShape">
+            <summary>
+            Dimension and shape of the input tensor
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.OutputShape">
+            <summary>
+            Output dimension
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.TypeLayer">
+            <summary>
+            Layer type
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.TypeNonLin">
+            <summary>
+            Activation type
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.#ctor(AI.ML.NeuralNetwork.CoreNNW.Shape,AI.ML.NeuralNetwork.CoreNNW.Layers.FilterStruct,AI.ML.NeuralNetwork.ComplexNet.Base.ICActiv,System.Random)">
+            <summary>
+            Convolutional layer
+            </summary>
+            <param name="inputShape">Dimension and shape of the input tensor</param>
+            <param name="filterStruct">Структура фильтров</param>
+            <param name="func">Activation function</param>
+            <param name="rnd">Генератор случайных чисел</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.#ctor(AI.ML.NeuralNetwork.CoreNNW.Layers.FilterStruct,AI.ML.NeuralNetwork.ComplexNet.Base.ICActiv)">
+            <summary>
+            Convolutional layer
+            </summary>
+            <param name="filterStruct">Структура фильтров</param>
+            <param name="func">Activation function</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.#ctor(AI.ML.NeuralNetwork.ComplexNet.Base.ICActiv,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Convolutional layer
+            </summary>
+            <param name="func">Activation function</param>
+            <param name="count">Число фильтров</param>
+            <param name="h">Высота фильтра</param>
+            <param name="w">Ширина фильтра</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.GeneratorW(System.Random,System.Double)">
+            <summary>
+            Setting up the random number generator initializer
+            </summary>
+            <param name="random">Pseudo-random number generator</param>
+            <param name="addDenumInSqrt">Adding a value to a radical expression in the denominator</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.Activate(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph)">
+            <summary>
+            Direct network pass
+            </summary>
+            <param name="input">Input</param>
+            <param name="g">Automatic differentiation graph</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.Generate(AI.ML.NeuralNetwork.CoreNNW.Shape,System.Random)">
+            <summary>
+            Generating a neural network layer
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.RestOutShape">
+            <summary>
+            Обновление размера выхода
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.ToString">
+            <summary>
+            Layer description
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ComplexConvolutionalLayer.GetParameters">
+            <summary>
+            Getting trained parameters
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer">
+            <summary>
+            Complex layer
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer.InputShape">
+            <summary>
+            Input dimension
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer.OutputShape">
+            <summary>
+            Output dimension
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer.TrainableParameters">
+            <summary>
+            Number of learning parameters
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer.Function">
+            <summary>
+            Activation function
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer.Activate(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph)">
             <summary>
             Прямой проход
             </summary>
             <param name="input">Вход</param>
             <param name="g">Граф автодифференцирования</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICLayer.Generate(AI.ML.NeuralNetwork.CoreNNW.Shape,System.Random)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer.Generate(AI.ML.NeuralNetwork.CoreNNW.Shape,System.Random)">
             <summary>
             Генерация весов
             </summary>
             <param name="inpShape">Input dimension</param>
             <param name="random">Генератор случайных чисел</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICLearningLayer.GetParameters">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICLearningLayer.GetParameters">
             <summary>
             Getting trained parameters
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICNet.InputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.InputShape">
             <summary>
             Inputs shape
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICNet.OutputShape">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.OutputShape">
             <summary>
             Outputs shape
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICNet.TrainableParameters">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.TrainableParameters">
             <summary>
             Number of trainable parameters
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Layers.ICNet.Layers">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.Layers">
             <summary>
             List of layers
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICNet.Activate(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.Base.ICGraph)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.Activate(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph)">
             <summary>
             Forward pass
             </summary>
@@ -5994,377 +6142,83 @@
             <param name="g">Graph of automatic differentiation</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICNet.ResetState">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.ResetState">
             <summary>
             Reset state, must be in a recurrent neural network
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICNet.GetParameters">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.GetParameters">
             <summary>
             Trainable parameters
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICNet.Save(System.String)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.Save(System.String)">
             <summary>
             Save network
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICNet.AddNewLayer(AI.ML.ComplexNet.Layers.ICLayer)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.AddNewLayer(AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer)">
             <summary>
             Append a new layer to the network
             </summary>
             <param name="layer">New layer</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Layers.ICNet.AddNewLayer(AI.ML.NeuralNetwork.CoreNNW.Shape,AI.ML.ComplexNet.Layers.ICLayer)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Layers.ICNet.AddNewLayer(AI.ML.NeuralNetwork.CoreNNW.Shape,AI.ML.NeuralNetwork.ComplexNet.Layers.ICLayer)">
             <summary>
             Append a new layer to the network
             </summary>
             <param name="inputShape">Input shape</param>
             <param name="layer">new layer</param>
         </member>
-        <member name="T:AI.ML.ComplexNet.Loss.ComplexMSE">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CAdam.#ctor">
             <summary>
-            Mean square of error
+            Адам
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Loss.ComplexMSE.Backward(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CAdam.UpdateModelParams(AI.ML.NeuralNetwork.ComplexNet.CNNW,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
-            Backward pass (taking derivative)
+            Обновление параметров 
             </summary>
-            <param name="actualOutput">Output value (actual)</param>
-            <param name="targetOutput">Target value (ideal)</param>
+            <param name="network">Нейросеть</param>
+            <param name="learningRate">Скорость обучения</param>
+            <param name="gradClip">Максимальное значение градиента</param>
+            <param name="L1">Коэф. L1 регуляризации</param>
+            <param name="L2">Коэф. L1 регуляризации</param>
+            <param name="gradGain"></param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Loss.ComplexMSE.Measure(AI.ML.ComplexNet.NNComplexValue,AI.ML.ComplexNet.NNComplexValue)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CAdam.Reset">
             <summary>
-            Error value
-            </summary>
-            <param name="actualOutput">Output value (actual)</param>
-            <param name="targetOutput">Target value (ideal)</param>
-        </member>
-        <member name="T:AI.ML.ComplexNet.NNComplexValue">
-            <summary>
-            The main class for storing data about a neural network, can be a vector, matrix or tensor of the 3rd rank
+            Сброс
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.H">
-            <summary>
-            Height
-            </summary>
-        </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.W">
-            <summary>
-            Width
-            </summary>
-        </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.D">
-            <summary>
-            Depth
-            </summary>
-        </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.Count">
-            <summary>
-            The number of elements in a tensor
-            </summary>
-        </member>
-        <member name="F:AI.ML.ComplexNet.NNComplexValue.DataInTensor">
-            <summary>
-            Данные в тензоре
-            </summary>
-        </member>
-        <member name="F:AI.ML.ComplexNet.NNComplexValue.DifData">
-            <summary>
-            Данные диференцирования
-            </summary>
-        </member>
-        <member name="F:AI.ML.ComplexNet.NNComplexValue.StepCache">
-            <summary>
-            Кэш
-            </summary>
-        </member>
-        <member name="F:AI.ML.ComplexNet.NNComplexValue.StepCache2">
-            <summary>
-            Кэш для более сложных моделей обучения
-            </summary>
-        </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.S">
-            <summary>
-            Площадь тензора
-            </summary>
-        </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.Item(System.Int32)">
-            <summary>
-            Получение элемента по его индексу в массиве
-            </summary>
-            <param name="i">Индекс</param>
-            <returns></returns>
-        </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.Item(System.Int32,System.Int32)">
-            <summary>
-            Получение элемента по индексу  высоты и ширины
-            </summary>
-            <param name="h">Индекс высоты</param>
-            <param name="w">Индекс ширины</param>
-        </member>
-        <member name="P:AI.ML.ComplexNet.NNComplexValue.Item(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Получение элемента по индексу высоты,ширины и глубины
-            </summary>
-            <param name="h">Высота</param>
-            <param name="w">Ширина</param>
-            <param name="d">Глубина</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(System.Int32)">
-            <summary>
-            Создание тензора с параметрами dim, 1,1
-            </summary>
-            <param name="dim">Размерность тензора</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.op_Division(AI.ML.ComplexNet.NNComplexValue,System.Double)">
-            <summary>
-            Деление тензора ПРОИЗВОДНЫХ на число
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Like0">
-            <summary>
-            Похожий тензор(той же формы, заполненный нулями)
-            </summary>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(System.Double)">
-            <summary>
-            Создание тензора с параметрами 1, 1,1
-            </summary>
-            <param name="value">Значение</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(AI.Vector,System.Boolean)">
-            <summary>
-            Создание тензора на базе вектора, вектор становится вектор-столбцом
-            </summary>
-            <param name="data">Вектор</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(AI.ComplexVector)">
-            <summary>
-            Создание тензора на базе вектора, вектор становится вектор-столбцом
-            </summary>
-            <param name="data">Вектор</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(AI.Tensor)">
-            <summary>
-            Создание тензора на базе тензора из AI
-            </summary>
-            <param name="tensor">Тензор</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(AI.Matrix)">
-            <summary>
-            Создание тензора на базе матрицы из AI
-            </summary>
-            <param name="matrix">Матрица</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(System.Int32,System.Int32)">
-            <summary>
-            Создание матрицы (тензора hxwx1)
-            </summary>
-            <param name="h">Высота</param>
-            <param name="w">Ширина</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Создание тензора
-            </summary>
-            <param name="h">Высота</param>
-            <param name="w">Ширина</param>
-            <param name="d">Глубина</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.#ctor(System.Double[])">
-            <summary>
-            Создание вектора
-            </summary>
-            <param name="vector">Массив данных</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToString">
-            <summary>
-            Перевод матрицы в строку
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToStrings">
-            <summary>
-            Перевод матрицы в массив строк
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToTensor(System.Boolean)">
-            <summary>
-            Перевод в AI Тензор
-            </summary>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToMatrix(System.Boolean)">
-            <summary>
-            Перевод в AI Матрицу
-            </summary>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToVector(System.Boolean)">
-            <summary>
-            Перевод в AI Вектор
-            </summary>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToComplexVector">
-            <summary>
-            Перевод в AI Вектор
-            </summary>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToTxts">
-            <summary>
-            Перевод матрицы в массив строк
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ToTxtsNoInfo">
-            <summary>
-            Перевод матрицы в массив строк
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Gauss(System.Random)">
-            <summary>
-            Гауссово распределение
-            </summary>
-            <returns>Возвращает норм. распред величину СКО = 1, M = 0</returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Clone">
-            <summary>
-            Клонирование тензора
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ResetDw">
-            <summary>
-            Сброс производных
-            </summary>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.ResetStepCache">
-            <summary>
-            Сброс кэша
-            </summary>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Transpose(AI.ML.ComplexNet.NNComplexValue)">
-            <summary>
-            Транспонирование
-            </summary>
-            <param name="m">Матрица</param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Random(System.Int32,System.Int32,System.Double,System.Random)">
-            <summary>
-            Заполнение тензора случайными числами
-            </summary>
-            <param name="h">Ширина</param>
-            <param name="w">Высота</param>
-            <param name="std">ско</param>
-            <param name="rnd">Генератор псевдослуч. чисел</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Random(System.Int32,System.Int32,System.Int32,System.Double,System.Random)">
-            <summary>
-            Заполнение тензора случайными числами
-            </summary>
-            <param name="h">Ширина</param>
-            <param name="w">Высота</param>
-            <param name="d">Глубина</param>
-            <param name="std">ско</param>
-            <param name="rnd">Генератор псевдослуч. чисел</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.RandomR(System.Int32,System.Int32,System.Int32,System.Double,System.Random)">
-            <summary>
-            Заполнение тензора случайными числами
-            </summary>
-            <param name="h">Ширина</param>
-            <param name="w">Высота</param>
-            <param name="d">Глубина</param>
-            <param name="std">ско</param>
-            <param name="rnd">Генератор псевдослуч. чисел</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Ident(System.Int32)">
-            <summary>
-            Создание единичной матрицы
-            </summary>
-            <param name="dim">Размерность матрицы</param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Uniform(System.Int32,System.Int32,System.Double)">
-            <summary>
-            Создание матрицы заполненной одним числом
-            </summary>
-            <param name="h">Высота</param>
-            <param name="w">Ширина</param>
-            <param name="s">Число</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Uniform(System.Int32,System.Int32,System.Numerics.Complex)">
-            <summary>
-            Создание матрицы заполненной одним числом
-            </summary>
-            <param name="h">Высота</param>
-            <param name="w">Ширина</param>
-            <param name="s">Число</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.Ones(System.Int32,System.Int32)">
-            <summary>
-            Заполнение тензора единицами
-            </summary>
-            <param name="h">Высота</param>
-            <param name="w">Ширина</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.NegativeOnes(System.Int32,System.Int32)">
-            <summary>
-            Заполнение тензора -1
-            </summary>
-            <param name="h">Высота</param>
-            <param name="w">Ширина</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.SaveAsText(System.String)">
-            <summary>
-            Сохранение тензора в текстовом формате
-            </summary>
-            <param name="path">Путь до файла</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.SaveAsTextNoInfo(System.String)">
-            <summary>
-            Сохранение без тензора без описания
-            </summary>
-            <param name="path">Путь для сохранения</param>
-        </member>
-        <member name="M:AI.ML.ComplexNet.NNComplexValue.GetShape">
-            <summary>
-            Получить форму тензора
-            </summary>
-        </member>
-        <member name="T:AI.ML.ComplexNet.Opts.CSGD">
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.Opts.CSGD">
             <summary>
             Stochastic gradient descent
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.Opts.CSGD.Momentum">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.Opts.CSGD.Momentum">
             <summary>
             Momentum
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Opts.CSGD.#ctor">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CSGD.#ctor">
             <summary>
             Stochastic gradient descent, moment = 0
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Opts.CSGD.#ctor(System.Double)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CSGD.#ctor(System.Double)">
             <summary>
             Stochastic gradient descent
             </summary>
             <param name="momentum">Moment</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Opts.CSGD.Reset">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CSGD.Reset">
             <summary>
             Resetting Teaching Parameters
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.Opts.CSGD.UpdateModelParams(AI.ML.ComplexNet.CNNW,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CSGD.UpdateModelParams(AI.ML.NeuralNetwork.ComplexNet.CNNW,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Updating parameters 
             </summary>
@@ -6375,70 +6229,385 @@
             <param name="L1">L1 regularization</param>
             <param name="L2">L2 regularization</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.Opts.CSGD.ToString">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Opts.CSGD.ToString">
             <summary>
             String representation
             </summary>
         </member>
-        <member name="T:AI.ML.ComplexNet.CTrainer">
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.Loss.ComplexMSE">
+            <summary>
+            Mean square of error
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Loss.ComplexMSE.Backward(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
+            <summary>
+            Backward pass (taking derivative)
+            </summary>
+            <param name="actualOutput">Output value (actual)</param>
+            <param name="targetOutput">Target value (ideal)</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.Loss.ComplexMSE.Measure(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
+            <summary>
+            Error value
+            </summary>
+            <param name="actualOutput">Output value (actual)</param>
+            <param name="targetOutput">Target value (ideal)</param>
+        </member>
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue">
+            <summary>
+            The main class for storing data about a neural network, can be a vector, matrix or tensor of the 3rd rank
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.H">
+            <summary>
+            Height
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.W">
+            <summary>
+            Width
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.D">
+            <summary>
+            Depth
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Count">
+            <summary>
+            The number of elements in a tensor
+            </summary>
+        </member>
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.DataInTensor">
+            <summary>
+            Данные в тензоре
+            </summary>
+        </member>
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.DifData">
+            <summary>
+            Данные диференцирования
+            </summary>
+        </member>
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.StepCache">
+            <summary>
+            Кэш
+            </summary>
+        </member>
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.StepCache2">
+            <summary>
+            Кэш для более сложных моделей обучения
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.S">
+            <summary>
+            Площадь тензора
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Item(System.Int32)">
+            <summary>
+            Получение элемента по его индексу в массиве
+            </summary>
+            <param name="i">Индекс</param>
+            <returns></returns>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Item(System.Int32,System.Int32)">
+            <summary>
+            Получение элемента по индексу  высоты и ширины
+            </summary>
+            <param name="h">Индекс высоты</param>
+            <param name="w">Индекс ширины</param>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Item(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получение элемента по индексу высоты,ширины и глубины
+            </summary>
+            <param name="h">Высота</param>
+            <param name="w">Ширина</param>
+            <param name="d">Глубина</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(System.Int32)">
+            <summary>
+            Создание тензора с параметрами dim, 1,1
+            </summary>
+            <param name="dim">Размерность тензора</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.op_Division(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue,System.Double)">
+            <summary>
+            Деление тензора ПРОИЗВОДНЫХ на число
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Like0">
+            <summary>
+            Похожий тензор(той же формы, заполненный нулями)
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(System.Double)">
+            <summary>
+            Создание тензора с параметрами 1, 1,1
+            </summary>
+            <param name="value">Значение</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(AI.Vector,System.Boolean)">
+            <summary>
+            Создание тензора на базе вектора, вектор становится вектор-столбцом
+            </summary>
+            <param name="data">Вектор</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(AI.ComplexVector)">
+            <summary>
+            Создание тензора на базе вектора, вектор становится вектор-столбцом
+            </summary>
+            <param name="data">Вектор</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(AI.Tensor)">
+            <summary>
+            Создание тензора на базе тензора из AI
+            </summary>
+            <param name="tensor">Тензор</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(AI.Matrix)">
+            <summary>
+            Создание тензора на базе матрицы из AI
+            </summary>
+            <param name="matrix">Матрица</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Создание матрицы (тензора hxwx1)
+            </summary>
+            <param name="h">Высота</param>
+            <param name="w">Ширина</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Создание тензора
+            </summary>
+            <param name="h">Высота</param>
+            <param name="w">Ширина</param>
+            <param name="d">Глубина</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.#ctor(System.Double[])">
+            <summary>
+            Создание вектора
+            </summary>
+            <param name="vector">Массив данных</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToString">
+            <summary>
+            Перевод матрицы в строку
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToStrings">
+            <summary>
+            Перевод матрицы в массив строк
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToTensor(System.Boolean)">
+            <summary>
+            Перевод в AI Тензор
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToMatrix(System.Boolean)">
+            <summary>
+            Перевод в AI Матрицу
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToVector(System.Boolean)">
+            <summary>
+            Перевод в AI Вектор
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToComplexVector">
+            <summary>
+            Перевод в AI Вектор
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToTxts">
+            <summary>
+            Перевод матрицы в массив строк
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ToTxtsNoInfo">
+            <summary>
+            Перевод матрицы в массив строк
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Gauss(System.Random)">
+            <summary>
+            Гауссово распределение
+            </summary>
+            <returns>Возвращает норм. распред величину СКО = 1, M = 0</returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Clone">
+            <summary>
+            Клонирование тензора
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ResetDw">
+            <summary>
+            Сброс производных
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.ResetStepCache">
+            <summary>
+            Сброс кэша
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Transpose(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue)">
+            <summary>
+            Транспонирование
+            </summary>
+            <param name="m">Матрица</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Random(System.Int32,System.Int32,System.Double,System.Random)">
+            <summary>
+            Заполнение тензора случайными числами
+            </summary>
+            <param name="h">Ширина</param>
+            <param name="w">Высота</param>
+            <param name="std">ско</param>
+            <param name="rnd">Генератор псевдослуч. чисел</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Random(System.Int32,System.Int32,System.Int32,System.Double,System.Random)">
+            <summary>
+            Заполнение тензора случайными числами
+            </summary>
+            <param name="h">Ширина</param>
+            <param name="w">Высота</param>
+            <param name="d">Глубина</param>
+            <param name="std">ско</param>
+            <param name="rnd">Генератор псевдослуч. чисел</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.RandomR(System.Int32,System.Int32,System.Int32,System.Double,System.Random)">
+            <summary>
+            Заполнение тензора случайными числами
+            </summary>
+            <param name="h">Ширина</param>
+            <param name="w">Высота</param>
+            <param name="d">Глубина</param>
+            <param name="std">ско</param>
+            <param name="rnd">Генератор псевдослуч. чисел</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Ident(System.Int32)">
+            <summary>
+            Создание единичной матрицы
+            </summary>
+            <param name="dim">Размерность матрицы</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Uniform(System.Int32,System.Int32,System.Double)">
+            <summary>
+            Создание матрицы заполненной одним числом
+            </summary>
+            <param name="h">Высота</param>
+            <param name="w">Ширина</param>
+            <param name="s">Число</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Uniform(System.Int32,System.Int32,System.Numerics.Complex)">
+            <summary>
+            Создание матрицы заполненной одним числом
+            </summary>
+            <param name="h">Высота</param>
+            <param name="w">Ширина</param>
+            <param name="s">Число</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.Ones(System.Int32,System.Int32)">
+            <summary>
+            Заполнение тензора единицами
+            </summary>
+            <param name="h">Высота</param>
+            <param name="w">Ширина</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.NegativeOnes(System.Int32,System.Int32)">
+            <summary>
+            Заполнение тензора -1
+            </summary>
+            <param name="h">Высота</param>
+            <param name="w">Ширина</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.SaveAsText(System.String)">
+            <summary>
+            Сохранение тензора в текстовом формате
+            </summary>
+            <param name="path">Путь до файла</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.SaveAsTextNoInfo(System.String)">
+            <summary>
+            Сохранение без тензора без описания
+            </summary>
+            <param name="path">Путь для сохранения</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.NNComplexValue.GetShape">
+            <summary>
+            Получить форму тензора
+            </summary>
+        </member>
+        <member name="T:AI.ML.NeuralNetwork.ComplexNet.CTrainer">
             <summary>
             Класс для обучения нейросетей
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CTrainer.L2Regularization">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.L2Regularization">
             <summary>
             Коэффициент L2 регуляризации, если он равен 0 L2 регуляризации нет
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CTrainer.L1Regularization">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.L1Regularization">
             <summary>
             Коэффициент L1 регуляризации, если он равен 0 L2 регуляризации нет
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CTrainer.BatchSize">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.BatchSize">
             <summary>
             Размер мини-пакета
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CTrainer.TrainTypeSetting">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.TrainTypeSetting">
             <summary>
             Тип обучение, онлайн, офлайн или мини пакетный
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CTrainer.TrainOptimizer">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.TrainOptimizer">
             <summary>
             Метод обчения SGD, Adam и т.п.
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CTrainer.RandomSeed">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.RandomSeed">
             <summary>
             Сид для генератора случайных чисел
             </summary>
         </member>
-        <member name="F:AI.ML.ComplexNet.CTrainer.GradientClipValue">
+        <member name="F:AI.ML.NeuralNetwork.ComplexNet.CTrainer.GradientClipValue">
             <summary>
             Ограничение грандиента, чтобы избежать взрыва градиента, по умолчанию 3
             </summary>
         </member>
-        <member name="P:AI.ML.ComplexNet.CTrainer.Info">
+        <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.Info">
             <summary>
             Информация об обучении НС
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.#ctor(AI.ML.ComplexNet.Base.ICGraph)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.#ctor(AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph)">
             <summary>
             Создание "учителя" для нейросети
             </summary> 
             <param name="graph">Граф автодифференцирования</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.#ctor(AI.ML.ComplexNet.Base.ICGraph,AI.ML.NeuralNetwork.CoreNNW.TrainType)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.#ctor(AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph,AI.ML.NeuralNetwork.CoreNNW.TrainType)">
             <summary>
             Создание "учителя" для нейросети
             </summary> 
             <param name="graph">Граф автодифференцирования</param>
             <param name="trainType">Тип обучения</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.#ctor(AI.ML.ComplexNet.Base.ICGraph,AI.ML.NeuralNetwork.CoreNNW.TrainType,AI.ML.ComplexNet.Base.ICOptimizer)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.#ctor(AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph,AI.ML.NeuralNetwork.CoreNNW.TrainType,AI.ML.NeuralNetwork.ComplexNet.Base.ICOptimizer)">
             <summary>
             Создание "учителя" для нейросети
             </summary> 
@@ -6446,7 +6615,7 @@
             <param name="trainType">Тип обучения</param>
             <param name="optimizer">Метод обучения</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.Train(System.Int32,System.Double,AI.ML.ComplexNet.CNNW,AI.ML.ComplexNet.DataStruct.CDataset,System.Double)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.Train(System.Int32,System.Double,AI.ML.NeuralNetwork.ComplexNet.CNNW,AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataset,System.Double)">
             <summary>
             Обучение сети
             </summary>
@@ -6457,17 +6626,17 @@
             <param name="minLoss">Значение ошибки при которой останавливается обучение</param>
             <returns>Ошибка</returns>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.PassOnline(System.Double,AI.ML.ComplexNet.CNNW,System.Collections.Generic.List{AI.ML.ComplexNet.DataStruct.CDataSequence},System.Boolean,AI.ML.ComplexNet.Base.ICLoss)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.PassOnline(System.Double,AI.ML.NeuralNetwork.ComplexNet.CNNW,System.Collections.Generic.List{AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataSequence},System.Boolean,AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss)">
             <summary>
             Онлайн обучение
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.PassOffline(System.Double,AI.ML.ComplexNet.CNNW,System.Collections.Generic.List{AI.ML.ComplexNet.DataStruct.CDataSequence},System.Boolean,AI.ML.ComplexNet.Base.ICLoss)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.PassOffline(System.Double,AI.ML.NeuralNetwork.ComplexNet.CNNW,System.Collections.Generic.List{AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataSequence},System.Boolean,AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss)">
             <summary>
             Оффлайн обучение
             </summary>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.PassBatch(System.Double,AI.ML.ComplexNet.CNNW,System.Collections.Generic.List{AI.ML.ComplexNet.DataStruct.CDataSequence},System.Boolean,AI.ML.ComplexNet.Base.ICLoss)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.PassBatch(System.Double,AI.ML.NeuralNetwork.ComplexNet.CNNW,System.Collections.Generic.List{AI.ML.NeuralNetwork.ComplexNet.DataStruct.CDataSequence},System.Boolean,AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss)">
             <summary>
             Один проход для минипакетного обучения
             </summary>
@@ -6477,920 +6646,12 @@
             <param name="isTraining">Производится ли обучение</param>
             <param name="lossFunction">Функция ошибки</param>
         </member>
-        <member name="M:AI.ML.ComplexNet.CTrainer.UpdateModelParams(AI.ML.ComplexNet.CNNW,System.Double)">
+        <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.UpdateModelParams(AI.ML.NeuralNetwork.ComplexNet.CNNW,System.Double)">
             <summary>
             Обновление весов
             </summary>
             <param name="network">Сеть</param>
             <param name="learningRate">Скорость обучения</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.ML.ComplexNet.NNComplexValue[],AI.ML.ComplexNet.NNComplexValue[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Vector[],AI.Vector[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Matrix[],AI.Matrix[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Tensor[],AI.Tensor[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Tensor[],AI.Vector[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Vector[],AI.Matrix[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Tensor[],AI.Matrix[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Matrix[],AI.Tensor[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Matrix[],AI.Vector[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Vector[],AI.Tensor[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.Init(AI.ML.ComplexNet.NNComplexValue[],AI.ML.ComplexNet.NNComplexValue[],AI.ML.ComplexNet.Base.ICLoss,System.Double)">
-            <summary>
-            Инициализация класса
-            </summary>
-            <param name="inputs">Входные данные</param>
-            <param name="outputs">Идеальные выходы</param>
-            <param name="los">Ошибка</param>
-            <param name="valSplit">Доля выборки для валидации</param>
-        </member>
-        <member name="T:AI.ML.Datasets.DataSetReccurent">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Vector}[],System.Collections.Generic.List{AI.Vector}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Matrix}[],System.Collections.Generic.List{AI.Matrix}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Tensor}[],System.Collections.Generic.List{AI.Tensor}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-             <summary>
-            Датасет для рекуррентных нейросетей
-             </summary>
-             <param name="inputs">Входы</param>
-             <param name="outputs">Выходы</param>
-             <param name="los">Функция ошибки</param>
-             <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Tensor}[],System.Collections.Generic.List{AI.Vector}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Vector}[],System.Collections.Generic.List{AI.Matrix}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Tensor}[],System.Collections.Generic.List{AI.Matrix}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Matrix}[],System.Collections.Generic.List{AI.Tensor}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Matrix}[],System.Collections.Generic.List{AI.Vector}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Vector}[],System.Collections.Generic.List{AI.Tensor}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для рекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetReccurent.Init(System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Инициализация класса
-            </summary>
-            <param name="inputs">Входные данные</param>
-            <param name="outputs">Идеальные выходы</param>
-            <param name="los">Ошибка</param>
-            <param name="valSplit">Доля выборки для валидации</param>
-        </member>
-        <member name="T:AI.ML.Datasets.ExtensionOfFeatureSpace">
-            <summary>
-            Расширение пространства признаков
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Polinomial(System.Double,System.Int32)">
-            <summary>
-            Раширение пространства признаков полиномиальной ф-ей
-            </summary>
-            <param name="x">Вход</param>
-            <param name="n">степень полинома</param>
-            <returns>Новый вектор</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Polinomial(AI.Vector,System.Int32)">
-            <summary>
-            Раширение пространства признаков полиномиальной ф-ей
-            </summary>
-            <param name="inp">Вход</param>
-            <param name="n">степень полинома</param>
-            <returns>Новый вектор</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Cos(System.Double,System.Int32)">
-            <summary>
-            Раширение пространства признаков косинусами
-            </summary>
-            <param name="x">Вход</param>
-            <param name="n">Число гармоник</param>
-            <returns>Новый вектор</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Sin(System.Double,System.Int32)">
-            <summary>
-            Раширение пространства признаков синусами 
-            </summary>
-            <param name="x">Вход</param>
-            <param name="n">Число гармоник</param>
-            <returns>Новый вектор</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.SinCos(System.Double,System.Int32)">
-            <summary>
-            Раширение пространства признаков синусами и косинусами
-            </summary>
-            <param name="x">Вход</param>
-            <param name="n">Число гармоник</param>
-            <returns>Новый вектор</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Cos(AI.Vector,System.Int32)">
-            <summary>
-            Раширение пространства признаков косинусами
-            </summary>
-            <param name="inp">Вход</param>
-            <param name="n">Число гармоник</param>
-            <returns>Новый вектор</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.PoliCos(AI.Vector,System.Int32,System.Int32)">
-            <summary>
-            Расширение пространства с помощью полиномиальных ф-й и потом косинусов
-            </summary>
-            <param name="x">Вход</param>
-            <param name="nPolinom">Степень полинома</param>
-            <param name="nCos">Кол-во косинусов</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.PoliCos(System.Double,System.Int32,System.Int32)">
-            <summary>
-            Расширение пространства с помощью полиномиальных ф-й и потом косинусов
-            </summary>
-            <param name="x">Вход</param>
-            <param name="nPolinom">Степень полинома</param>
-            <param name="nCos">Кол-во косинусов</param>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.GaussRBF(System.Double,AI.Vector,System.Double)">
-            <summary>
-            Радиально-базисная ф-я Гаусса
-            </summary>
-            <param name="x">Вход</param>
-            <param name="centers">Массив центров</param>
-            <param name="std">СКО</param>
-            <returns>Вектор значений от 0 до 1</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Sinc(System.Double,AI.Vector)">
-            <summary>
-            Синус Котельникова sin(x)/x
-            </summary>
-            <param name="x"></param>
-            <param name="centers"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.ImportanceSign(AI.Vector[])">
-            <summary>
-            
-            </summary>
-            <param name="dataset"></param>
-            <returns></returns>
-        </member>
-        <member name="T:AI.ML.Datasets.MatrixInt">
-            <summary>
-            Датасет с картинками матрица-нормер класса
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.MatrixInt.GetRandMatrixIntSemple">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:AI.ML.Datasets.MatrixIntSemple">
-            <summary>
-            Элемент датасета (матрица - номер класса)
-            </summary>
-        </member>
-        <member name="P:AI.ML.Datasets.MatrixIntSemple.matrix">
-            <summary>
-            Матрица
-            </summary>
-        </member>
-        <member name="P:AI.ML.Datasets.MatrixIntSemple.classNum">
-            <summary>
-            Номер класса
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.MatrixIntSemple.#ctor">
-            <summary>
-            Элемент датасета (матрица - номер класса)
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.MatrixIntSemple.#ctor(AI.Matrix,System.Int32)">
-            <summary>
-            Элемент датасета (матрица - номер класса)
-            </summary>
-            <param name="matr">Матрица</param>
-            <param name="numClass">Номер класса</param>
-        </member>
-        <member name="T:AI.ML.Datasets.MatrixVector">
-            <summary>
-            Коллекция(датасет) матрица-вектор
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.MatrixVector.MatrixVectorSempleRand">
-            <summary>
-            random instance
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:AI.ML.Datasets.MatrixVectorSemple">
-            <summary>
-            Матрица-вектор
-            </summary>
-        </member>
-        <member name="F:AI.ML.Datasets.MatrixVectorSemple.matrix">
-            <summary>
-            Матрица
-            </summary>
-        </member>
-        <member name="F:AI.ML.Datasets.MatrixVectorSemple.vector">
-            <summary>
-            Вектор
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.MatrixVectorSemple.#ctor(AI.Matrix,AI.Vector)">
-            <summary>
-            Матрица-вектор
-            </summary>
-            <param name="matr">Матрица</param>
-            <param name="vect">Вектор</param>
-        </member>
-        <member name="T:AI.ML.Datasets.SignalProcessingDataset">
-            <summary>
-            Датасет для задач ЦОС
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.SignalProcessingDataset.#ctor(AI.Vector[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для задач ЦОС
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.SignalProcessingDataset.Init(System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Инициализация класса
-            </summary>
-            <param name="inputs">Входные данные</param>
-            <param name="outputs">Идеальные выходы</param>
-            <param name="los">Ошибка</param>
-            <param name="valSplit">Доля выборки для валидации</param>
-        </member>
-        <member name="T:AI.ML.Datasets.VectorClass">
-            <summary>
-            Представляет структуру вектор-класс
-            </summary>
-        </member>
-        <member name="F:AI.ML.Datasets.VectorClass.InpVector">
-            <summary>
-            Вектор для классификации
-            </summary>
-        </member>
-        <member name="F:AI.ML.Datasets.VectorClass.ClassMark">
-            <summary>
-            Метка класса
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorClass.#ctor(AI.Vector,System.Int32)">
-            <summary>
-            Представляет структуру вектор-класс
-            </summary>
-            <param name="vector">Вектор</param>
-            <param name="mark">Метка класса</param>
-        </member>
-        <member name="T:AI.ML.Datasets.VectorIntDataset">
-            <summary>
-            Датасет
-            </summary>
-        </member>
-        <member name="F:AI.ML.Datasets.VectorIntDataset.mean">
-            <summary>
-            Средний вектор
-            </summary>
-        </member>
-        <member name="F:AI.ML.Datasets.VectorIntDataset.disp">
-            <summary>
-            Дисперсия по выборке
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.#ctor(System.String)">
-            <summary>
-            Загрузка датасета из файла
-            </summary>
-            <param name="path">Путь</param>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.#ctor">
-            <summary>
-            Датасет
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.#ctor(System.Int32)">
-            <summary>
-            Датасет
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.GetRandomData">
-            <summary>
-            Случайный представитель датасета
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.CorrMatrFeatures">
-            <summary>
-            Корреляционная матрица признаков
-            </summary>
-            <returns>Нормированная кор. матрица</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.DispMeanResult">
-            <summary>
-            Получение вектора дисперсии и среднего вектора
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.Normalise">
-            <summary>
-            Нормализация датасета
-            </summary>
-            <returns>Датасет</returns>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.GetDatasetDelSim(System.Double)">
-            <summary>
-            Удаление похожих векторов из разных классов
-            </summary>
-            <param name="simCoef">Коэффициент схожести</param>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.CsvToVid(System.String,System.Char)">
-            <summary>
-            
-            </summary>
-            <param name="path"></param>
-            <param name="separator"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.CsvToVid(System.String,System.Int32,System.Char)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.VectorIntDataset.Save(System.String,System.Char)">
-            <summary>
-            Сохранение датасета
-            </summary>
-        </member>
-        <member name="T:AI.ML.Datasets.DataSetNoReccurent">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Vector[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Matrix[],AI.Matrix[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Tensor[],AI.Tensor[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Tensor[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Vector[],AI.Matrix[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Tensor[],AI.Matrix[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Matrix[],AI.Tensor[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Matrix[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Vector[],AI.Tensor[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Датасет для нерекуррентных нейросетей
-            </summary>
-            <param name="inputs">Входы</param>
-            <param name="outputs">Выходы</param>
-            <param name="los">Функция ошибки</param>
-            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
-        </member>
-        <member name="M:AI.ML.Datasets.DataSetNoReccurent.Init(AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
-            <summary>
-            Инициализация класса
-            </summary>
-            <param name="inputs">Входные данные</param>
-            <param name="outputs">Идеальные выходы</param>
-            <param name="los">Ошибка</param>
-            <param name="valSplit">Доля выборки для валидации</param>
-        </member>
-        <member name="T:AI.ML.ML.Datasets.Img2Img">
-            <summary>
-            Датасет для преобразования картинки в картинку
-            </summary>
-        </member>
-        <member name="T:AI.ML.ML.Datasets.Img2ImgEl">
-            <summary>
-            Элемент датасета для преобразования картинки в картинку
-            </summary>
-        </member>
-        <member name="P:AI.ML.ML.Datasets.Img2ImgEl.InputImg">
-            <summary>
-            Входное изображение
-            </summary>
-        </member>
-        <member name="P:AI.ML.ML.Datasets.Img2ImgEl.TargetImg">
-            <summary>
-            Целевое изображение
-            </summary>
-        </member>
-        <member name="T:AI.ML.Genetic.GeneticCore.Cell">
-            <summary>
-            Клетка
-            </summary>
-        </member>
-        <member name="P:AI.ML.Genetic.GeneticCore.Cell.Score">
-            <summary>
-            Набранные очки
-            </summary>
-        </member>
-        <member name="P:AI.ML.Genetic.GeneticCore.Cell.Parametrs">
-            <summary>
-            Параметры (хромосомы)
-            </summary>
-        </member>
-        <member name="P:AI.ML.Genetic.GeneticCore.Cell.Function">
-            <summary>
-            Полезная функция
-            </summary>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Cell.#ctor(System.Int32,System.Func{AI.Vector,AI.Vector,AI.Vector},System.Random,System.Double,System.Double)">
-            <summary>
-            Клетка
-            </summary>
-            <param name="parametrsCount">Number of parameters</param>
-            <param name="function">Функция</param>
-            <param name="rnd">Pseudo-random number generator</param>
-            <param name="valDown">Нижняя граница распределения</param>
-            <param name="valUp">Верхняя граница распределения</param>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Cell.Output(AI.Vector)">
-            <summary>
-            Выход модели
-            </summary>
-            <param name="inpVector">Входной вектор</param>
-        </member>
-        <member name="T:AI.ML.Genetic.GeneticCore.Population">
-            <summary>
-            Популяция клеток
-            </summary>
-        </member>
-        <member name="F:AI.ML.Genetic.GeneticCore.Population.mutProb">
-            <summary>
-            Вероятность мутации
-            </summary>
-        </member>
-        <member name="F:AI.ML.Genetic.GeneticCore.Population.k">
-            <summary>
-            Точка кросоверинга 
-            </summary>
-        </member>
-        <member name="P:AI.ML.Genetic.GeneticCore.Population.LiderCount">
-            <summary>
-            Число лидеров для размножения
-            </summary>
-        </member>
-        <member name="P:AI.ML.Genetic.GeneticCore.Population.MutationValue">
-            <summary>
-            Величина мутации
-            </summary>
-        </member>
-        <member name="P:AI.ML.Genetic.GeneticCore.Population.DValueUp">
-            <summary>
-            Верхняя граница поиска
-            </summary>
-        </member>
-        <member name="P:AI.ML.Genetic.GeneticCore.Population.DValueDown">
-            <summary>
-            Нижняя граница поиска
-            </summary>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.#ctor(System.Int32,System.Int32,System.Func{AI.Vector,AI.Vector,AI.Vector},AI.Vector[],AI.Vector[],System.Double,System.Double)">
-            <summary>
-            Популяция
-            </summary>
-            <param name="countCell">Число клеток</param>
-            <param name="countParam">Number of parameters</param>
-            <param name="function">Полезная функция</param>
-            <param name="inp">Векторы входа</param>
-            <param name="outp">Векторы выхода</param>
-            <param name="valDown">Нижняя граница поиска</param>
-            <param name="valUp">Верхняя граница поиска</param>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.#ctor(System.Int32,System.Int32,System.Func{AI.Vector,AI.Vector,AI.Vector},AI.Vector,AI.Vector,System.Double,System.Double)">
-            <summary>
-            Популяция
-            </summary>
-            <param name="countCell">Число клеток</param>
-            <param name="countParam">Number of parameters</param>
-            <param name="function">Полезная функция</param>
-            <param name="inp">Input data vector</param>
-            <param name="outp">Вектор выхода</param>
-            <param name="valDown">Нижняя граница поиска</param>
-            <param name="valUp">Верхняя граница поиска</param>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.CellOut(AI.Vector,System.Int32)">
-            <summary>
-             Проход функции от одной переменной
-            </summary>
-            <param name="inp">Вектор входов</param>
-            <param name="indCell">Номер клетки</param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.Epoch(System.Int32)">
-            <summary>
-            Эпоха жизни клеток
-            </summary>
-            <param name="count">Число детей</param>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.Score(AI.Vector,AI.Vector)">
-            <summary>
-            Очки на одном примере
-            </summary>
-            <param name="outp">Выход модели</param>
-            <param name="targ">Целевое значение</param>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.SortCells">
-            <summary>
-            Сортировка клеток
-            </summary>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.Mutation(AI.ML.Genetic.GeneticCore.Cell)">
-            <summary>
-            Мутация клетки
-            </summary>
-            <param name="input">Исходная клетка</param>
-        </member>
-        <member name="M:AI.ML.Genetic.GeneticCore.Population.Cross(AI.ML.Genetic.GeneticCore.Cell,AI.ML.Genetic.GeneticCore.Cell)">
-            <summary>
-            Скрещивание клеток
-            </summary>
-            <param name="par1">Первый родитель</param>
-            <param name="par2">Второй родитель</param>
-        </member>
-        <member name="T:AI.ML.GradientDecentDataset">
-            <summary>
-            Класс для хранения обучающей выборки для градиентного спуска
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecentDataset.X">
-            <summary>
-            Набор векторов "Х"
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecentDataset.Y">
-            <summary>
-            Набор векторов "Y"
-            </summary>
-        </member>
-        <member name="M:AI.ML.GradientDecentDataset.#ctor">
-            <summary>
-            Создает экземпляр GradientDecentDataset
-            </summary>
-        </member>
-        <member name="M:AI.ML.GradientDecentDataset.#ctor(System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector})">
-            <summary>
-            Создает экземпляр GradientDecentDataset
-            </summary>
-            <param name="xVector">Набор векторов "Х"</param>
-            <param name="yVector">Набор векторов "Y"</param>
-        </member>
-        <member name="M:AI.ML.GradientDecentDataset.Add(AI.Vector,AI.Vector)">
-            <summary>
-            Добавляет данные в обучающую выборку
-            </summary>
-            <param name="x">Вектор х</param>
-            <param name="y">Вектор у</param>
-        </member>
-        <member name="M:AI.ML.GradientDecentDataset.Add(System.Double,System.Double)">
-            <summary>
-            Добавляет данные в обучающую выборку
-            </summary>
-            <param name="x">переменная х</param>
-            <param name="y">переменная у</param>
-        </member>
-        <member name="M:AI.ML.GradientDecentDataset.Add(AI.Vector,System.Double)">
-            <summary>
-            Добавляет данные в обучающую выборку
-            </summary>
-            <param name="x">Вектор х</param>
-            <param name="y">Переменная у</param>
-        </member>
-        <member name="M:AI.ML.GradientDecentDataset.Clear">
-            <summary>
-            Очистка данных
-            </summary>
-        </member>
-        <member name="T:AI.ML.GradientDecent">
-            <summary>
-            Градиентный спуск
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecent.Step">
-            <summary>
-            Шаг для вычисления частных производных и градиента
-            (чем он меньше, тем точнее вычисление частных производных)
-            по умолчанию шаг 1e-7
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecent.GdDataset">
-            <summary>
-            Обучающая выборка
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecent.Parammetrs">
-            <summary>
-            Вектор оптимизируемых парамметров
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecent.Function">
-            <summary>
-            Целевая функция типа:
-            double SF(Vector_парамметры, ListVector_обучающая_выборка_Х, ListVector_обучающая_выборка_Y)
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecent.Norm">
-            <summary>
-            Норма обучения, по умолчанию 0.002
-            </summary>
-        </member>
-        <member name="P:AI.ML.GradientDecent.Itterations">
-            <summary>
-            Кол-во иттераций, по умолчанию 30
-            </summary>
-        </member>
-        <member name="M:AI.ML.GradientDecent.#ctor(AI.Vector,System.Func{AI.Vector,System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector},System.Double},AI.ML.GradientDecentDataset)">
-            <summary>
-            Создание объекта Градиентный спуск
-            </summary>
-            <param name="param">Вектор оптимизируемых парамметров</param>
-            <param name="function">Целевая функция типа:
-            double SF(Vector_парамметры, ListVector_обучающая_выборка_Х, ListVector_обучающая_выборка_Y)</param>
-            <param name="gdd">Обучающая выборка</param>
-        </member>
-        <member name="M:AI.ML.GradientDecent.DecentIter">
-            <summary>
-            Одна иттерация спуска
-            </summary>
-        </member>
-        <member name="M:AI.ML.GradientDecent.Decent">
-            <summary>
-            Синхронное выполнение градиентного спуска
-            </summary>
-        </member>
-        <member name="M:AI.ML.GradientDecent.AsyncDecent">
-            <summary>
-            Асинхронное выполнение градиентного спуска
-            </summary>
-        </member>
-        <member name="M:AI.ML.GradientDecent.PartialDerivatives(AI.Vector,System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector},System.Func{AI.Vector,System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector},System.Double})">
-            <summary>
-            Частные производные
-            </summary>
-            <param name="param">Начальный вектор параметров(точка)</param>
-            <param name="function">Целевая функция(принимает вектор параметров, выдает результирующее значение)</param>
-             <param name="inp"> Вектора входа</param>
-              <param name="ideal"> Идеальные выходы</param>
-            <returns>Возвращает вектор частных производных</returns>
-        </member>
-        <member name="T:AI.ML.LOO">
-            <summary>
-            Метод скользящего контроля
-            </summary>
-        </member>
-        <member name="M:AI.ML.LOO.GetKClassif(AI.ML.Datasets.VectorIntDataset,System.Func{AI.Vector,AI.Vector,System.Double},System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Получение наилучшего числа соседей 
-            </summary>
-            <param name="vectorClasses">Датасет</param>
-            <param name="dist">Функция расстояния</param>
-            <param name="end">Конечное число соседей</param>
-            <param name="start">Начальное число соседей</param>
-            <param name="parsen">Используется ли окно Парзена</param>
-        </member>
-        <member name="M:AI.ML.LOO.GetKClassifVectorQ(AI.ML.Datasets.VectorIntDataset,System.Func{AI.Vector,AI.Vector,System.Double},System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Получение зависимости качества классификации от числа соседей
-            </summary>
-            <param name="vectorClasses">Датасет</param>
-            <param name="dist">Функция расстояния</param>
-            <param name="end">Конечное число соседей</param>
-            <param name="start">Начальное число соседей</param>
-            <param name="parsen">Используется ли окно Парзена</param>
-        </member>
-        <member name="M:AI.ML.LOO.QKClassif(AI.ML.Datasets.VectorIntDataset,System.Int32,System.Int32,System.Boolean,System.Func{AI.Vector,AI.Vector,System.Double})">
-            <summary>
-            Удаление элемента из выборки и проверка на нем
-            </summary>
-            <param name="vectorClasses"></param>
-            <param name="i"></param>
-            <param name="testK"></param>
-            <param name="parsen"></param>
-            <param name="dist"></param>
-            <returns></returns>
         </member>
         <member name="T:AI.ML.NeuralNetwork.Architectures.ConvClassifier">
             <summary>
@@ -8033,6 +7294,12 @@
             Шаг данных
             </summary>
             <param name="input">Вход</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.BatchReNormalization.ToString">
+            <summary>
+            Layer description
+            </summary>
+            <returns></returns>
         </member>
         <member name="F:AI.ML.NeuralNetwork.CoreNNW.Layers.ComplexLayers.FeedComplexLayer.WRe">
             <summary>
@@ -10716,6 +9983,12 @@
             </summary>
             <param name="dim">Размерность тензора</param>
         </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.NNValue.#ctor(AI.ML.NeuralNetwork.CoreNNW.Shape)">
+            <summary>
+            Create tensor
+            </summary>
+            <param name="shape">Shape of the tensor</param>
+        </member>
         <member name="M:AI.ML.NeuralNetwork.CoreNNW.NNValue.op_Division(AI.ML.NeuralNetwork.CoreNNW.NNValue,System.Double)">
             <summary>
             Деление тензора ПРОИЗВОДНЫХ на число
@@ -10890,6 +10163,18 @@
             </summary>
             <param name="h">Высота</param>
             <param name="w">Ширина</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.NNValue.Ones(AI.ML.NeuralNetwork.CoreNNW.Shape)">
+            <summary>
+            Заполнение тензора единицами
+            </summary>
+            <param name="shape"></param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.NNValue.Ones(System.Int32)">
+            <summary>
+            Заполнение тензора единицами
+            </summary>
+            <param name="h">Высота</param>
         </member>
         <member name="M:AI.ML.NeuralNetwork.CoreNNW.NNValue.NegativeOnes(System.Int32,System.Int32)">
             <summary>
@@ -11824,6 +11109,914 @@
             <summary>
             Строковое представление
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue[],AI.ML.NeuralNetwork.ComplexNet.NNComplexValue[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Vector[],AI.Vector[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Matrix[],AI.Matrix[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Tensor[],AI.Tensor[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Tensor[],AI.Vector[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Vector[],AI.Matrix[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Tensor[],AI.Matrix[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Matrix[],AI.Tensor[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Matrix[],AI.Vector[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.#ctor(AI.Vector[],AI.Tensor[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ComplexDatasetNoRecurrent.Init(AI.ML.NeuralNetwork.ComplexNet.NNComplexValue[],AI.ML.NeuralNetwork.ComplexNet.NNComplexValue[],AI.ML.NeuralNetwork.ComplexNet.Base.ICLoss,System.Double)">
+            <summary>
+            Инициализация класса
+            </summary>
+            <param name="inputs">Входные данные</param>
+            <param name="outputs">Идеальные выходы</param>
+            <param name="los">Ошибка</param>
+            <param name="valSplit">Доля выборки для валидации</param>
+        </member>
+        <member name="T:AI.ML.Datasets.DataSetReccurent">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Vector}[],System.Collections.Generic.List{AI.Vector}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Matrix}[],System.Collections.Generic.List{AI.Matrix}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Tensor}[],System.Collections.Generic.List{AI.Tensor}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+             <summary>
+            Датасет для рекуррентных нейросетей
+             </summary>
+             <param name="inputs">Входы</param>
+             <param name="outputs">Выходы</param>
+             <param name="los">Функция ошибки</param>
+             <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Tensor}[],System.Collections.Generic.List{AI.Vector}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Vector}[],System.Collections.Generic.List{AI.Matrix}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Tensor}[],System.Collections.Generic.List{AI.Matrix}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Matrix}[],System.Collections.Generic.List{AI.Tensor}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Matrix}[],System.Collections.Generic.List{AI.Vector}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.#ctor(System.Collections.Generic.List{AI.Vector}[],System.Collections.Generic.List{AI.Tensor}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для рекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetReccurent.Init(System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Инициализация класса
+            </summary>
+            <param name="inputs">Входные данные</param>
+            <param name="outputs">Идеальные выходы</param>
+            <param name="los">Ошибка</param>
+            <param name="valSplit">Доля выборки для валидации</param>
+        </member>
+        <member name="T:AI.ML.Datasets.ExtensionOfFeatureSpace">
+            <summary>
+            Расширение пространства признаков
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Polinomial(System.Double,System.Int32)">
+            <summary>
+            Раширение пространства признаков полиномиальной ф-ей
+            </summary>
+            <param name="x">Вход</param>
+            <param name="n">степень полинома</param>
+            <returns>Новый вектор</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Polinomial(AI.Vector,System.Int32)">
+            <summary>
+            Раширение пространства признаков полиномиальной ф-ей
+            </summary>
+            <param name="inp">Вход</param>
+            <param name="n">степень полинома</param>
+            <returns>Новый вектор</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Cos(System.Double,System.Int32)">
+            <summary>
+            Раширение пространства признаков косинусами
+            </summary>
+            <param name="x">Вход</param>
+            <param name="n">Число гармоник</param>
+            <returns>Новый вектор</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Sin(System.Double,System.Int32)">
+            <summary>
+            Раширение пространства признаков синусами 
+            </summary>
+            <param name="x">Вход</param>
+            <param name="n">Число гармоник</param>
+            <returns>Новый вектор</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.SinCos(System.Double,System.Int32)">
+            <summary>
+            Раширение пространства признаков синусами и косинусами
+            </summary>
+            <param name="x">Вход</param>
+            <param name="n">Число гармоник</param>
+            <returns>Новый вектор</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Cos(AI.Vector,System.Int32)">
+            <summary>
+            Раширение пространства признаков косинусами
+            </summary>
+            <param name="inp">Вход</param>
+            <param name="n">Число гармоник</param>
+            <returns>Новый вектор</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.PoliCos(AI.Vector,System.Int32,System.Int32)">
+            <summary>
+            Расширение пространства с помощью полиномиальных ф-й и потом косинусов
+            </summary>
+            <param name="x">Вход</param>
+            <param name="nPolinom">Степень полинома</param>
+            <param name="nCos">Кол-во косинусов</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.PoliCos(System.Double,System.Int32,System.Int32)">
+            <summary>
+            Расширение пространства с помощью полиномиальных ф-й и потом косинусов
+            </summary>
+            <param name="x">Вход</param>
+            <param name="nPolinom">Степень полинома</param>
+            <param name="nCos">Кол-во косинусов</param>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.GaussRBF(System.Double,AI.Vector,System.Double)">
+            <summary>
+            Радиально-базисная ф-я Гаусса
+            </summary>
+            <param name="x">Вход</param>
+            <param name="centers">Массив центров</param>
+            <param name="std">СКО</param>
+            <returns>Вектор значений от 0 до 1</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.Sinc(System.Double,AI.Vector)">
+            <summary>
+            Синус Котельникова sin(x)/x
+            </summary>
+            <param name="x"></param>
+            <param name="centers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.Datasets.ExtensionOfFeatureSpace.ImportanceSign(AI.Vector[])">
+            <summary>
+            
+            </summary>
+            <param name="dataset"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI.ML.Datasets.MatrixInt">
+            <summary>
+            Датасет с картинками матрица-нормер класса
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.MatrixInt.GetRandMatrixIntSemple">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AI.ML.Datasets.MatrixIntSemple">
+            <summary>
+            Элемент датасета (матрица - номер класса)
+            </summary>
+        </member>
+        <member name="P:AI.ML.Datasets.MatrixIntSemple.matrix">
+            <summary>
+            Матрица
+            </summary>
+        </member>
+        <member name="P:AI.ML.Datasets.MatrixIntSemple.classNum">
+            <summary>
+            Номер класса
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.MatrixIntSemple.#ctor">
+            <summary>
+            Элемент датасета (матрица - номер класса)
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.MatrixIntSemple.#ctor(AI.Matrix,System.Int32)">
+            <summary>
+            Элемент датасета (матрица - номер класса)
+            </summary>
+            <param name="matr">Матрица</param>
+            <param name="numClass">Номер класса</param>
+        </member>
+        <member name="T:AI.ML.Datasets.MatrixVector">
+            <summary>
+            Коллекция(датасет) матрица-вектор
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.MatrixVector.MatrixVectorSempleRand">
+            <summary>
+            random instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AI.ML.Datasets.MatrixVectorSemple">
+            <summary>
+            Матрица-вектор
+            </summary>
+        </member>
+        <member name="F:AI.ML.Datasets.MatrixVectorSemple.matrix">
+            <summary>
+            Матрица
+            </summary>
+        </member>
+        <member name="F:AI.ML.Datasets.MatrixVectorSemple.vector">
+            <summary>
+            Вектор
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.MatrixVectorSemple.#ctor(AI.Matrix,AI.Vector)">
+            <summary>
+            Матрица-вектор
+            </summary>
+            <param name="matr">Матрица</param>
+            <param name="vect">Вектор</param>
+        </member>
+        <member name="T:AI.ML.Datasets.SignalProcessingDataset">
+            <summary>
+            Датасет для задач ЦОС
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.SignalProcessingDataset.#ctor(AI.Vector[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для задач ЦОС
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.SignalProcessingDataset.Init(System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.NNValue}[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Инициализация класса
+            </summary>
+            <param name="inputs">Входные данные</param>
+            <param name="outputs">Идеальные выходы</param>
+            <param name="los">Ошибка</param>
+            <param name="valSplit">Доля выборки для валидации</param>
+        </member>
+        <member name="T:AI.ML.Datasets.VectorClass">
+            <summary>
+            Представляет структуру вектор-класс
+            </summary>
+        </member>
+        <member name="F:AI.ML.Datasets.VectorClass.InpVector">
+            <summary>
+            Вектор для классификации
+            </summary>
+        </member>
+        <member name="F:AI.ML.Datasets.VectorClass.ClassMark">
+            <summary>
+            Метка класса
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorClass.#ctor(AI.Vector,System.Int32)">
+            <summary>
+            Представляет структуру вектор-класс
+            </summary>
+            <param name="vector">Вектор</param>
+            <param name="mark">Метка класса</param>
+        </member>
+        <member name="T:AI.ML.Datasets.VectorIntDataset">
+            <summary>
+            Датасет
+            </summary>
+        </member>
+        <member name="F:AI.ML.Datasets.VectorIntDataset.mean">
+            <summary>
+            Средний вектор
+            </summary>
+        </member>
+        <member name="F:AI.ML.Datasets.VectorIntDataset.disp">
+            <summary>
+            Дисперсия по выборке
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.#ctor(System.String)">
+            <summary>
+            Загрузка датасета из файла
+            </summary>
+            <param name="path">Путь</param>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.#ctor">
+            <summary>
+            Датасет
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.#ctor(System.Int32)">
+            <summary>
+            Датасет
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.GetRandomData">
+            <summary>
+            Случайный представитель датасета
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.CorrMatrFeatures">
+            <summary>
+            Корреляционная матрица признаков
+            </summary>
+            <returns>Нормированная кор. матрица</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.DispMeanResult">
+            <summary>
+            Получение вектора дисперсии и среднего вектора
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.Normalise">
+            <summary>
+            Нормализация датасета
+            </summary>
+            <returns>Датасет</returns>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.GetDatasetDelSim(System.Double)">
+            <summary>
+            Удаление похожих векторов из разных классов
+            </summary>
+            <param name="simCoef">Коэффициент схожести</param>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.CsvToVid(System.String,System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.CsvToVid(System.String,System.Int32,System.Char)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.VectorIntDataset.Save(System.String,System.Char)">
+            <summary>
+            Сохранение датасета
+            </summary>
+        </member>
+        <member name="T:AI.ML.Datasets.DataSetNoReccurent">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Vector[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Matrix[],AI.Matrix[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Tensor[],AI.Tensor[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Tensor[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Vector[],AI.Matrix[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Tensor[],AI.Matrix[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Matrix[],AI.Tensor[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Matrix[],AI.Vector[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.#ctor(AI.Vector[],AI.Tensor[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Датасет для нерекуррентных нейросетей
+            </summary>
+            <param name="inputs">Входы</param>
+            <param name="outputs">Выходы</param>
+            <param name="los">Функция ошибки</param>
+            <param name="valSplit">Какая часть выборки будет использована при валидации</param>
+        </member>
+        <member name="M:AI.ML.Datasets.DataSetNoReccurent.Init(AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.NNValue[],AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss,System.Double)">
+            <summary>
+            Инициализация класса
+            </summary>
+            <param name="inputs">Входные данные</param>
+            <param name="outputs">Идеальные выходы</param>
+            <param name="los">Ошибка</param>
+            <param name="valSplit">Доля выборки для валидации</param>
+        </member>
+        <member name="T:AI.ML.ML.Datasets.Img2Img">
+            <summary>
+            Датасет для преобразования картинки в картинку
+            </summary>
+        </member>
+        <member name="T:AI.ML.ML.Datasets.Img2ImgEl">
+            <summary>
+            Элемент датасета для преобразования картинки в картинку
+            </summary>
+        </member>
+        <member name="P:AI.ML.ML.Datasets.Img2ImgEl.InputImg">
+            <summary>
+            Входное изображение
+            </summary>
+        </member>
+        <member name="P:AI.ML.ML.Datasets.Img2ImgEl.TargetImg">
+            <summary>
+            Целевое изображение
+            </summary>
+        </member>
+        <member name="T:AI.ML.Genetic.GeneticCore.Cell">
+            <summary>
+            Клетка
+            </summary>
+        </member>
+        <member name="P:AI.ML.Genetic.GeneticCore.Cell.Score">
+            <summary>
+            Набранные очки
+            </summary>
+        </member>
+        <member name="P:AI.ML.Genetic.GeneticCore.Cell.Parametrs">
+            <summary>
+            Параметры (хромосомы)
+            </summary>
+        </member>
+        <member name="P:AI.ML.Genetic.GeneticCore.Cell.Function">
+            <summary>
+            Полезная функция
+            </summary>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Cell.#ctor(System.Int32,System.Func{AI.Vector,AI.Vector,AI.Vector},System.Random,System.Double,System.Double)">
+            <summary>
+            Клетка
+            </summary>
+            <param name="parametrsCount">Number of parameters</param>
+            <param name="function">Функция</param>
+            <param name="rnd">Pseudo-random number generator</param>
+            <param name="valDown">Нижняя граница распределения</param>
+            <param name="valUp">Верхняя граница распределения</param>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Cell.Output(AI.Vector)">
+            <summary>
+            Выход модели
+            </summary>
+            <param name="inpVector">Входной вектор</param>
+        </member>
+        <member name="T:AI.ML.Genetic.GeneticCore.Population">
+            <summary>
+            Популяция клеток
+            </summary>
+        </member>
+        <member name="F:AI.ML.Genetic.GeneticCore.Population.mutProb">
+            <summary>
+            Вероятность мутации
+            </summary>
+        </member>
+        <member name="F:AI.ML.Genetic.GeneticCore.Population.k">
+            <summary>
+            Точка кросоверинга 
+            </summary>
+        </member>
+        <member name="P:AI.ML.Genetic.GeneticCore.Population.LiderCount">
+            <summary>
+            Число лидеров для размножения
+            </summary>
+        </member>
+        <member name="P:AI.ML.Genetic.GeneticCore.Population.MutationValue">
+            <summary>
+            Величина мутации
+            </summary>
+        </member>
+        <member name="P:AI.ML.Genetic.GeneticCore.Population.DValueUp">
+            <summary>
+            Верхняя граница поиска
+            </summary>
+        </member>
+        <member name="P:AI.ML.Genetic.GeneticCore.Population.DValueDown">
+            <summary>
+            Нижняя граница поиска
+            </summary>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.#ctor(System.Int32,System.Int32,System.Func{AI.Vector,AI.Vector,AI.Vector},AI.Vector[],AI.Vector[],System.Double,System.Double)">
+            <summary>
+            Популяция
+            </summary>
+            <param name="countCell">Число клеток</param>
+            <param name="countParam">Number of parameters</param>
+            <param name="function">Полезная функция</param>
+            <param name="inp">Векторы входа</param>
+            <param name="outp">Векторы выхода</param>
+            <param name="valDown">Нижняя граница поиска</param>
+            <param name="valUp">Верхняя граница поиска</param>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.#ctor(System.Int32,System.Int32,System.Func{AI.Vector,AI.Vector,AI.Vector},AI.Vector,AI.Vector,System.Double,System.Double)">
+            <summary>
+            Популяция
+            </summary>
+            <param name="countCell">Число клеток</param>
+            <param name="countParam">Number of parameters</param>
+            <param name="function">Полезная функция</param>
+            <param name="inp">Input data vector</param>
+            <param name="outp">Вектор выхода</param>
+            <param name="valDown">Нижняя граница поиска</param>
+            <param name="valUp">Верхняя граница поиска</param>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.CellOut(AI.Vector,System.Int32)">
+            <summary>
+             Проход функции от одной переменной
+            </summary>
+            <param name="inp">Вектор входов</param>
+            <param name="indCell">Номер клетки</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.Epoch(System.Int32)">
+            <summary>
+            Эпоха жизни клеток
+            </summary>
+            <param name="count">Число детей</param>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.Score(AI.Vector,AI.Vector)">
+            <summary>
+            Очки на одном примере
+            </summary>
+            <param name="outp">Выход модели</param>
+            <param name="targ">Целевое значение</param>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.SortCells">
+            <summary>
+            Сортировка клеток
+            </summary>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.Mutation(AI.ML.Genetic.GeneticCore.Cell)">
+            <summary>
+            Мутация клетки
+            </summary>
+            <param name="input">Исходная клетка</param>
+        </member>
+        <member name="M:AI.ML.Genetic.GeneticCore.Population.Cross(AI.ML.Genetic.GeneticCore.Cell,AI.ML.Genetic.GeneticCore.Cell)">
+            <summary>
+            Скрещивание клеток
+            </summary>
+            <param name="par1">Первый родитель</param>
+            <param name="par2">Второй родитель</param>
+        </member>
+        <member name="T:AI.ML.GradientDecentDataset">
+            <summary>
+            Класс для хранения обучающей выборки для градиентного спуска
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecentDataset.X">
+            <summary>
+            Набор векторов "Х"
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecentDataset.Y">
+            <summary>
+            Набор векторов "Y"
+            </summary>
+        </member>
+        <member name="M:AI.ML.GradientDecentDataset.#ctor">
+            <summary>
+            Создает экземпляр GradientDecentDataset
+            </summary>
+        </member>
+        <member name="M:AI.ML.GradientDecentDataset.#ctor(System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector})">
+            <summary>
+            Создает экземпляр GradientDecentDataset
+            </summary>
+            <param name="xVector">Набор векторов "Х"</param>
+            <param name="yVector">Набор векторов "Y"</param>
+        </member>
+        <member name="M:AI.ML.GradientDecentDataset.Add(AI.Vector,AI.Vector)">
+            <summary>
+            Добавляет данные в обучающую выборку
+            </summary>
+            <param name="x">Вектор х</param>
+            <param name="y">Вектор у</param>
+        </member>
+        <member name="M:AI.ML.GradientDecentDataset.Add(System.Double,System.Double)">
+            <summary>
+            Добавляет данные в обучающую выборку
+            </summary>
+            <param name="x">переменная х</param>
+            <param name="y">переменная у</param>
+        </member>
+        <member name="M:AI.ML.GradientDecentDataset.Add(AI.Vector,System.Double)">
+            <summary>
+            Добавляет данные в обучающую выборку
+            </summary>
+            <param name="x">Вектор х</param>
+            <param name="y">Переменная у</param>
+        </member>
+        <member name="M:AI.ML.GradientDecentDataset.Clear">
+            <summary>
+            Очистка данных
+            </summary>
+        </member>
+        <member name="T:AI.ML.GradientDecent">
+            <summary>
+            Градиентный спуск
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecent.Step">
+            <summary>
+            Шаг для вычисления частных производных и градиента
+            (чем он меньше, тем точнее вычисление частных производных)
+            по умолчанию шаг 1e-7
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecent.GdDataset">
+            <summary>
+            Обучающая выборка
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecent.Parammetrs">
+            <summary>
+            Вектор оптимизируемых парамметров
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecent.Function">
+            <summary>
+            Целевая функция типа:
+            double SF(Vector_парамметры, ListVector_обучающая_выборка_Х, ListVector_обучающая_выборка_Y)
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecent.Norm">
+            <summary>
+            Норма обучения, по умолчанию 0.002
+            </summary>
+        </member>
+        <member name="P:AI.ML.GradientDecent.Itterations">
+            <summary>
+            Кол-во иттераций, по умолчанию 30
+            </summary>
+        </member>
+        <member name="M:AI.ML.GradientDecent.#ctor(AI.Vector,System.Func{AI.Vector,System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector},System.Double},AI.ML.GradientDecentDataset)">
+            <summary>
+            Создание объекта Градиентный спуск
+            </summary>
+            <param name="param">Вектор оптимизируемых парамметров</param>
+            <param name="function">Целевая функция типа:
+            double SF(Vector_парамметры, ListVector_обучающая_выборка_Х, ListVector_обучающая_выборка_Y)</param>
+            <param name="gdd">Обучающая выборка</param>
+        </member>
+        <member name="M:AI.ML.GradientDecent.DecentIter">
+            <summary>
+            Одна иттерация спуска
+            </summary>
+        </member>
+        <member name="M:AI.ML.GradientDecent.Decent">
+            <summary>
+            Синхронное выполнение градиентного спуска
+            </summary>
+        </member>
+        <member name="M:AI.ML.GradientDecent.AsyncDecent">
+            <summary>
+            Асинхронное выполнение градиентного спуска
+            </summary>
+        </member>
+        <member name="M:AI.ML.GradientDecent.PartialDerivatives(AI.Vector,System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector},System.Func{AI.Vector,System.Collections.Generic.List{AI.Vector},System.Collections.Generic.List{AI.Vector},System.Double})">
+            <summary>
+            Частные производные
+            </summary>
+            <param name="param">Начальный вектор параметров(точка)</param>
+            <param name="function">Целевая функция(принимает вектор параметров, выдает результирующее значение)</param>
+             <param name="inp"> Вектора входа</param>
+              <param name="ideal"> Идеальные выходы</param>
+            <returns>Возвращает вектор частных производных</returns>
+        </member>
+        <member name="T:AI.ML.LOO">
+            <summary>
+            Метод скользящего контроля
+            </summary>
+        </member>
+        <member name="M:AI.ML.LOO.GetKClassif(AI.ML.Datasets.VectorIntDataset,System.Func{AI.Vector,AI.Vector,System.Double},System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Получение наилучшего числа соседей 
+            </summary>
+            <param name="vectorClasses">Датасет</param>
+            <param name="dist">Функция расстояния</param>
+            <param name="end">Конечное число соседей</param>
+            <param name="start">Начальное число соседей</param>
+            <param name="parsen">Используется ли окно Парзена</param>
+        </member>
+        <member name="M:AI.ML.LOO.GetKClassifVectorQ(AI.ML.Datasets.VectorIntDataset,System.Func{AI.Vector,AI.Vector,System.Double},System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Получение зависимости качества классификации от числа соседей
+            </summary>
+            <param name="vectorClasses">Датасет</param>
+            <param name="dist">Функция расстояния</param>
+            <param name="end">Конечное число соседей</param>
+            <param name="start">Начальное число соседей</param>
+            <param name="parsen">Используется ли окно Парзена</param>
+        </member>
+        <member name="M:AI.ML.LOO.QKClassif(AI.ML.Datasets.VectorIntDataset,System.Int32,System.Int32,System.Boolean,System.Func{AI.Vector,AI.Vector,System.Double})">
+            <summary>
+            Удаление элемента из выборки и проверка на нем
+            </summary>
+            <param name="vectorClasses"></param>
+            <param name="i"></param>
+            <param name="testK"></param>
+            <param name="parsen"></param>
+            <param name="dist"></param>
             <returns></returns>
         </member>
         <member name="T:AI.ML.Regression.ExpMean">
