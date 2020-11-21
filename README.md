@@ -1,9 +1,11 @@
 # AIFramework версия 2.1 Free
 Публичная версия ИИ фреймворка
 
-* ## [Пакет NuGet](https://www.nuget.org/packages/AI)
+* ### Многие ссылки были удалены, т.к. документация устарела, сейчас идет составление новой
 
-* ## [Релиз 16.08.2020](https://github.com/AIFramework/AI_Free/blob/master/Aug2020Free.md)
+* ### [Пакет NuGet](https://www.nuget.org/packages/AI)
+
+* ### [Релиз 16.08.2020](https://github.com/AIFramework/AI_Free/blob/master/Aug2020Free.md)
 
 Презентация [полной версии](https://docs.google.com/presentation/d/1W0DY10chKeZeJ59CCiAnNEdMEtpEc39Khu5tPIPmfCQ), релиз намечен на декабрь 2020г, предрелиз с изменением текущей (урезанной) версии на август 2020г.
 
@@ -16,12 +18,12 @@
 * ### Особенности
 
   * #### Основные типы: 
-    * [Векторы](https://github.com/AIFramework/AI_Free/wiki/Vector)
-    * [Матрицы](https://github.com/AIFramework/AI_Free/wiki/Matrix)
-    * [Тензоры](https://github.com/AIFramework/AI_Free/wiki/Tensor)
+    * Векторы
+    * Матрицы
+    * Тензоры
 
   * #### Основные интегральные преобразования:
-    * [Фурье](https://github.com/AIFramework/AI_Free/wiki/Furie)
+    * Фурье
     * [Гильберта](https://github.com/AIFramework/AI_Free/wiki/FastHilbert)
     * [Дискретно косинусное](https://github.com/AIFramework/AI_Free/wiki/DCT)
     * [Быстрая свертка и корреляция](https://github.com/AIFramework/AI_Free/wiki/FastConv)
@@ -35,7 +37,7 @@
         * [Множественная регрессия](https://github.com/AIFramework/AI_Free/wiki/MultipleRegression)
         * [Линейная регрессия](https://github.com/AIFramework/AI_Free/wiki/LinearRegression)
         * [Регрессия на базе функции Гаусса](https://github.com/AIFramework/AI_Free/wiki/RBFGauss)
-        * [Регрессия на базе метода ближ. соседей](https://github.com/AIFramework/AI_Free/wiki/kNNReg)
+        * Регрессия на базе метода ближ. соседей
      * **Классификаторы**
         * [Метод эталонов](https://github.com/AIFramework/AI_Free/wiki/NN)
         * [Метод k-ближ. соседей](https://github.com/AIFramework/AI_Free/wiki/kNNCl)
@@ -44,12 +46,16 @@
 
   * ##### Нейронные сети
     * Слои: 
-      * [Полносвязный](https://github.com/AIFramework/AI_Free/wiki/FeedForwardLayer)
-      * [Линейный без смещения](https://github.com/AIFramework/AI_Free/wiki/LinearLayer)
-      * [Сверточный 2D](https://github.com/AIFramework/AI_Free/wiki/ConvolutionLayer)
-      * [MaxPooling2D](https://github.com/AIFramework/AI_Free/wiki/MaxPooling)
-      * Unpooling
-      * [UpSampling с бикубической интерполяцией](https://github.com/AIFramework/AI_Free/wiki/Upsampling2dBicibic)
+      * [Fully connected](https://github.com/AIFramework/AI_Free/wiki/FeedForwardLayer)
+      * [Linear without bias](https://github.com/AIFramework/AI_Free/wiki/LinearLayer)
+      * [Convolution 2D](https://github.com/AIFramework/AI_Free/wiki/ConvolutionLayer)
+      * [MaxPooling 2D](https://github.com/AIFramework/AI_Free/wiki/MaxPooling)
+      * Unpooling 2D
+      * [UpSampling2D с бикубической интерполяцией](https://github.com/AIFramework/AI_Free/wiki/Upsampling2dBicibic)
+      * Conv 1D
+      * Pooling 1D
+      * UpSampling 1D
+      * Feedforward complex
       * [Flatten](https://github.com/AIFramework/AI_Free/wiki/Flatten)
       * GRU
       * LSTM
@@ -84,33 +90,35 @@
  
 
    * #### Цифровая обработка сигналов
-      * [Генерация типовых сигналов](https://github.com/AIFramework/AI_Free/wiki/Signal)
-      * [Базовые фильтры](https://github.com/AIFramework/AI_Free/wiki/Filters)
-      * [Ких фильтры](https://github.com/AIFramework/AI_Free/wiki/FIRFilter)
-      * [Бих фильтры](https://github.com/AIFramework/AI_Free/wiki/IIRFilter)
-      * [Амплитудный спектр](https://github.com/AIFramework/AI_Free/wiki/AmplitudeSpectr)
-      * [Амплитудная модуляция/демодуляция](https://github.com/AIFramework/AI_Free/wiki/AM)
-      * [Частотная модуляция/демодуляция](https://github.com/AIFramework/AI_Free/wiki/FM)
+      * Генерация типовых сигналов
+      * Базовые фильтры
+      * Ких фильтры
+      * Бих фильтры
+      * Амплитудный спектр
+      * Амплитудная модуляция/демодуляция
+      * Частотная модуляция/демодуляция
+      * SSB
+      * DSB
 
    * #### Визуализация данных
-      * [Описание графиков](https://github.com/AIFramework/AI_Free/wiki/Description)
-      * [Данные одного графика](https://github.com/AIFramework/AI_Free/wiki/ChartData)
-      * [Данные нескольких графиков](https://github.com/AIFramework/AI_Free/wiki/ChartData)
-      * [Элемент управления для отрисовки графиков](https://github.com/AIFramework/AI_Free/wiki/ChartVisual)
-      * [Тепловые карты](https://github.com/AIFramework/AI_Free/wiki/HeatMapControl)
+      * Описание графиков
+      * Данные одного графика
+      * Данные нескольких графиков
+      * Элемент управления для отрисовки графиков
+      * Тепловые карты
 
 ---
 ## Разделы
 
-* #### Алгебра - Решение СЛАУ ( [Метод Гаусса](https://github.com/AIFramework/AI_Free/wiki/Gauss), [Метод Крамера](https://github.com/AIFramework/AI_Free/wiki/Kramer))
+* #### Алгебра - Решение СЛАУ ( Метод Гаусса, Метод Крамера)
 
-* #### Дополнительные мат. функции(Поэлементные) ([Функции используемые в нейросетях](https://github.com/AIFramework/AI_Free/wiki/NeuroFunc), [Аналитическая геометрия](https://github.com/AIFramework/AI_Free/wiki/GeomFunc), [Функции распределений](https://github.com/AIFramework/AI_Free/wiki/DistributionFunc), [Математические функции](https://github.com/AIFramework/AI_Free/wiki/MathFunc))
+* #### Дополнительные мат. функции(Поэлементные) (Функции используемые в нейросетях, Аналитическая геометрия, Функции распределений, Математические функции)
 
 * #### Компьютерное зрение ([Конвертирование и базовые преобразования изображений](https://github.com/AIFramework/AI_Free/wiki/ImgConverter), [Фильтрация изображений](https://github.com/AIFramework/AI_Free/wiki/ImgFilters))
 
 * #### Математическая статистика ([Базовые статистические методы](https://github.com/AIFramework/AI_Free/wiki/Statistic), [Расчет квантилей](https://github.com/AIFramework/AI_Free/wiki/Quantile), [Гистограммы](https://github.com/AIFramework/AI_Free/wiki/Histogramm))
 
-* #### Функции расстояния ([Базовые функции расстояния для метрических методов](https://github.com/AIFramework/AI_Free/wiki/BaseDist))
+* #### Функции расстояния (Базовые функции расстояния для метрических методов)
 
 * #### Анализ алгоритмов ([Оценка точностей классификаторов](https://github.com/AIFramework/AI_Free/wiki/Metrics))
 
