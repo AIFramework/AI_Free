@@ -1,7 +1,9 @@
 ### AI Framework 2.1 Free
 
-Contributors
+Contributors:
+
 Zahar A. Ponimash 
+
 Potanin Marat
 
 LICENSE:
