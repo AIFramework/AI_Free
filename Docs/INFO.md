@@ -10,7 +10,7 @@ CC BY-ND 4.0
 
 ### Acknowledgments:
 
-* We express our gratitude to Artur Matsur for help in implementing asynchronous learning and saving checkpoints.
+* We express our gratitude to Arthur Matsur for help in implementing asynchronous learning and saving checkpoints.
 
 ---------------------------------------
 
