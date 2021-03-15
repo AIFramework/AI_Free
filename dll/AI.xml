@@ -7467,12 +7467,12 @@
         </member>
         <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.L2Regularization">
             <summary>
-            Коэффициент L2 регуляризации, если он равен 0 L2 регуляризации нет
+            Regularization coefficient L2, if it is equal to 0 L2 regularization no
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.L1Regularization">
             <summary>
-            Коэффициент L1 регуляризации, если он равен 0 L2 регуляризации нет
+            Regularization coefficient L1, if it is equal to 0 L1 no regularization
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.BatchSize">
@@ -7497,12 +7497,12 @@
         </member>
         <member name="F:AI.ML.NeuralNetwork.ComplexNet.CTrainer.GradientClipValue">
             <summary>
-            Ограничение грандиента, чтобы избежать взрыва градиента, по умолчанию 3
+            Gradient clipping to avoid gradient explosion, default 3
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.ComplexNet.CTrainer.Info">
             <summary>
-            Информация об обучении НС
+            Neural network training information
             </summary>
         </member>
         <member name="M:AI.ML.NeuralNetwork.ComplexNet.CTrainer.#ctor(AI.ML.NeuralNetwork.ComplexNet.Base.ICGraph)">
@@ -11762,6 +11762,11 @@
             String representation
             </summary>
         </member>
+        <member name="T:AI.ML.NeuralNetwork.CoreNNW.ReportType">
+            <summary>
+            Report type
+            </summary>
+        </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Trainer">
             <summary>
             Class for training neural networks
@@ -11769,43 +11774,133 @@
         </member>
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.L2Regularization">
             <summary>
-            Коэффициент L2 регуляризации, если он равен 0 L2 регуляризации нет
+            Regularization coefficient L2, if it is equal to 0 L2 regularization no
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.L1Regularization">
             <summary>
-            Коэффициент L1 регуляризации, если он равен 0 L2 регуляризации нет
+            Regularization coefficient L1, if it is equal to 0 L1 no regularization
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.BatchSize">
             <summary>
-            Размер мини-пакета
+            Mini-batch size
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.TrainTypeSetting">
             <summary>
-            Тип обучение, онлайн, офлайн или мини пакетный
+            Type of training, online, offline or mini batch
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.TrainOptimizer">
             <summary>
-            Метод обчения SGD, Adam и т.п.
-            </summary>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.RandomSeed">
-            <summary>
-            Сид для генератора случайных чисел
+            Learning method SGD, Adam, etc.
             </summary>
         </member>
         <member name="F:AI.ML.NeuralNetwork.CoreNNW.Trainer.GradientClipValue">
             <summary>
-            Ограничение грандиента, чтобы избежать взрыва градиента, по умолчанию 3
+            Gradient clipping to avoid gradient explosion, default 3
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.Info">
             <summary>
-            Информация об обучении НС
+            Neural network training information
             </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.IsBusyTrainer">
+            <summary>
+            Is the trainer busy
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.DoOverfitStop">
+            <summary>
+            Whether to stop learning when overfitting
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.DoCheckPointSave">
+            <summary>
+            Whether to make intermediate saves
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.CheckPointSaver">
+            <summary>
+            Checkpoint saver
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.MetricMin">
+            <summary>
+            The minimum value for metrics that decrease as the quality of the model increases
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.MetricMax">
+            <summary>
+            The maximum value for metrics that increase with increasing model quality
+            </summary>
+        </member>
+        <member name="F:AI.ML.NeuralNetwork.CoreNNW.Trainer.Metric">
+            <summary>
+            Metric
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.ReportType">
+            <summary>
+            Report type
+            </summary>
+        </member>
+        <member name="T:AI.ML.NeuralNetwork.CoreNNW.Trainer.ReportEvent">
+            <summary>
+            ReportEvent
+            </summary>
+        </member>
+        <member name="T:AI.ML.NeuralNetwork.CoreNNW.Trainer.LossEvent">
+            <summary>
+            LossEvent
+            </summary>
+        </member>
+        <member name="T:AI.ML.NeuralNetwork.CoreNNW.Trainer.MetricEvent">
+            <summary>
+            MetricEvent
+            </summary>
+        </member>
+        <member name="T:AI.ML.NeuralNetwork.CoreNNW.Trainer.SimpleEvent">
+            <summary>
+            SimpleEvent
+            </summary>
+        </member>
+        <member name="E:AI.ML.NeuralNetwork.CoreNNW.Trainer.NewReportElement">
+            <summary>
+            New report item
+            </summary>
+        </member>
+        <member name="E:AI.ML.NeuralNetwork.CoreNNW.Trainer.NewValLoss">
+            <summary>
+            The new value of the validation loss
+            </summary>
+        </member>
+        <member name="E:AI.ML.NeuralNetwork.CoreNNW.Trainer.NewTrainLoss">
+            <summary>
+            The new value of the train loss
+            </summary>
+        </member>
+        <member name="E:AI.ML.NeuralNetwork.CoreNNW.Trainer.NewValMetric">
+            <summary>
+            The new value of the validation metric
+            </summary>
+        </member>
+        <member name="E:AI.ML.NeuralNetwork.CoreNNW.Trainer.StartTraining">
+            <summary>
+            Start network training
+            </summary>
+        </member>
+        <member name="E:AI.ML.NeuralNetwork.CoreNNW.Trainer.EndTraining">
+            <summary>
+            End network training
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.#ctor">
+            <summary>
+            Creating a "trainer" for a neural network
+            </summary> 
         </member>
         <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.#ctor(AI.ML.NeuralNetwork.CoreNNW.Models.IGraph)">
             <summary>
@@ -11828,6 +11923,11 @@
             <param name="trainType">Train type</param>
             <param name="optimizer">Optimizer training method</param>
         </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.#ctor(AI.ML.NeuralNetwork.CoreNNW.Models.IGraph,AI.ML.NeuralNetwork.CoreNNW.TrainType,AI.ML.NeuralNetwork.CoreNNW.Train.IOptimizer,System.Int32)">
+            <summary>
+            Creating a "trainer" for a neural network
+            </summary> 
+        </member>
         <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.Train(System.Int32,System.Single,AI.ML.NeuralNetwork.CoreNNW.Layers.INetwork,AI.ML.NeuralNetwork.CoreNNW.DataStructs.DataSet,System.Single)">
             <summary>
             Network training
@@ -11838,33 +11938,6 @@
             <param name="data">Data set</param>
             <param name="minLoss">Minimal loss value</param>
             <returns>Loss</returns>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.PassOnline(System.Single,AI.ML.NeuralNetwork.CoreNNW.Layers.INetwork,System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.DataStructs.DataSequence},System.Boolean,AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss)">
-            <summary>
-            Онлайн обучение
-            </summary>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.PassOffline(System.Single,AI.ML.NeuralNetwork.CoreNNW.Layers.INetwork,System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.DataStructs.DataSequence},System.Boolean,AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss)">
-            <summary>
-            Оффлайн обучение
-            </summary>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.PassBatch(System.Single,AI.ML.NeuralNetwork.CoreNNW.Layers.INetwork,System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.DataStructs.DataSequence},System.Boolean,AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss)">
-            <summary>
-            Один проход для минипакетного обучения
-            </summary>
-            <param name="learningRate">Learning rate</param>
-            <param name="network"> Neural network </param>
-            <param name="sequences">Датасет</param>
-            <param name="isTraining">Производится ли обучение</param>
-            <param name="lossFunction">Loss function</param>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Trainer.UpdateModelParams(AI.ML.NeuralNetwork.CoreNNW.Layers.INetwork,System.Single)">
-            <summary>
-            Обновление весов
-            </summary>
-            <param name="network">Сеть</param>
-            <param name="learningRate">Learning rate</param>
         </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.TrainType">
             <summary>
@@ -11886,14 +11959,14 @@
             Mini batch training
             </summary>
         </member>
+        <member name="F:AI.ML.NeuralNetwork.CoreNNW.Utilities.Metrics.RMSLE">
+            <summary>
+            RMLE (target[i]>-1, output[i]>-1 for all i \in [0; N-1])
+            </summary>
+        </member>
         <member name="M:AI.ML.NeuralNetwork.CoreNNW.Utilities.OverfitDetector.IsOverfit(AI.Vector,AI.Vector)">
             <summary>
             Overfit test
-            </summary>
-        </member>
-        <member name="F:AI.ML.NeuralNetwork.CoreNNW.Utilities.Tests.RMSLE">
-            <summary>
-            RMLE (target[i]>-1, output[i]>-1 for all i \in [0; N-1])
             </summary>
         </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Saver">
@@ -11942,12 +12015,12 @@
         </member>
         <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.L2Regularization">
             <summary>
-            Коэффициент L2 регуляризации, если он равен 0 L2 регуляризации нет
+            Regularization coefficient L2, if it is equal to 0 L2 regularization no
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.L1Regularization">
             <summary>
-            Коэффициент L1 регуляризации, если он равен 0 L2 регуляризации нет
+            Regularization coefficient L1, if it is equal to 0 L1 no regularization
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.BatchSize">
@@ -11972,12 +12045,12 @@
         </member>
         <member name="F:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.GradientClipValue">
             <summary>
-            Ограничение грандиента, чтобы избежать взрыва градиента, по умолчанию 3
+            Gradient clipping to avoid gradient explosion, default 3
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.Info">
             <summary>
-            Информация об обучении НС
+            Neural network training information
             </summary>
         </member>
         <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.#ctor(AI.ML.NeuralNetwork.CoreNNW.Models.IGraph,AI.ML.NeuralNetwork.CoreNNW.TrainType,AI.ML.NeuralNetwork.CoreNNW.Train.IOptimizer,System.Single,System.Single)">
