@@ -11807,7 +11807,7 @@
             Neural network training information
             </summary>
         </member>
-        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.IsBusyTrainer">
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.IsBusy">
             <summary>
             Is the trainer busy
             </summary>
