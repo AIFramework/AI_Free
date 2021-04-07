@@ -6362,11 +6362,6 @@
             
             </summary>
         </member>
-        <member name="M:AI.ML.NeuralNetwork.Architectures.GanNet.NGen">
-            <summary>
-            Noise generator
-            </summary>
-        </member>
         <member name="T:AI.ML.NeuralNetwork.Architectures.ClassifierNet.VectorPredictorStates">
             <summary>
             
@@ -8277,6 +8272,65 @@
             Use only mode, all additional parameters are deleted
             </summary>
         </member>
+        <member name="T:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent">
+            <summary>
+             Basic recurrent layer(does not perform input transformations), methods for generating weights are virtual
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.InputShape">
+            <summary>
+            Input dimension
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.OutputShape">
+            <summary>
+            Output dimension
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.TrainableParameters">
+            <summary>
+            Number of learning parameters
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.AddDenInSqrt">
+            <summary>
+            Adding to the denominator
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.Function">
+            <summary>
+            Activation function
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.Activate(AI.ML.NeuralNetwork.CoreNNW.NNValue,AI.ML.NeuralNetwork.CoreNNW.Models.IGraph)">
+            <summary>
+            Forward pass
+            </summary>
+            <param name="input">Input</param>
+            <param name="g">Graph of automatic differentiation</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.Generate(AI.ML.NeuralNetwork.CoreNNW.Shape,System.Random)">
+            <summary>
+            Generating weights
+            </summary>
+            <param name="inpShape">Input dimension</param>
+            <param name="random">Pseudo-random number generator</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.GetParameters">
+            <summary>
+            Getting trained parameters
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.OnlyUse">
+            <summary>
+            Only use mode
+            </summary>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.Base.BaseRecurrent.ResetState">
+            <summary>
+            Resetting the state of the neural network layer
+            </summary>
+        </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Layers.BatchReNormalization">
             <summary>
              BatchReNormalization (Normalization of inputs during online learning)
@@ -9334,7 +9388,7 @@
         </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Layers.ILearningLayer">
             <summary>
-            Слои с обучаемыми параметрами
+            Trainable layers
             </summary>
         </member>
         <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.ILearningLayer.GetParameters">
@@ -9344,7 +9398,7 @@
         </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Layers.IRecurrent">
             <summary>
-            Интерфейс для рекуррентных слоев
+            Interface for recurrent layers
             </summary>
         </member>
         <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.IRecurrent.ResetState">
@@ -9354,7 +9408,7 @@
         </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Layers.ILayer">
             <summary>
-            Интерфейс слоя
+            Layer interface
             </summary>
         </member>
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Layers.ILayer.InputShape">
@@ -9395,6 +9449,11 @@
             </summary>
             <param name="inpShape">Input dimension</param>
             <param name="random">Pseudo-random number generator</param>
+        </member>
+        <member name="M:AI.ML.NeuralNetwork.CoreNNW.Layers.ILayer.OnlyUse">
+            <summary>
+            Only use mode
+            </summary>
         </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Layers.INetwork">
             <summary>
@@ -11837,7 +11896,7 @@
             The maximum value for metrics that increase with increasing model quality
             </summary>
         </member>
-        <member name="F:AI.ML.NeuralNetwork.CoreNNW.Trainer.Metric">
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.Metric">
             <summary>
             Metric
             </summary>
@@ -11845,6 +11904,12 @@
         <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.ReportType">
             <summary>
             Report type
+            </summary>
+        </member>
+        <member name="P:AI.ML.NeuralNetwork.CoreNNW.Trainer.ControlFunction">
+            <summary>
+            Function that controls the training of the neural network.If it evaluates to "true", training will be stopped.
+            The function of the following form "bool Function (INetwork network, TrainInfo info, float bestVal)"
             </summary>
         </member>
         <member name="T:AI.ML.NeuralNetwork.CoreNNW.Trainer.ReportEvent">
@@ -11986,103 +12051,6 @@
             </summary>
             <param name="filePath">File path</param>
             <param name="nnw">Neural network</param>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.GAN.Activate(AI.ML.NeuralNetwork.CoreNNW.NNValue)">
-            <summary>
-            Activate generator
-            </summary>
-            <param name="noize">Noize</param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.GAN.Activate">
-            <summary>
-            Activate generator with Noize
-            </summary>
-            <returns>output of the generator</returns>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.GAN.ActivateDiscriminator(AI.ML.NeuralNetwork.CoreNNW.NNValue)">
-            <summary>
-            Activate discriminator
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.GAN.GenerateNoize">
-            <summary>
-            Generator of the noize
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.L2Regularization">
-            <summary>
-            Regularization coefficient L2, if it is equal to 0 L2 regularization no
-            </summary>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.L1Regularization">
-            <summary>
-            Regularization coefficient L1, if it is equal to 0 L1 no regularization
-            </summary>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.BatchSize">
-            <summary>
-            Размер мини-пакета
-            </summary>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.TrainTypeSetting">
-            <summary>
-            Тип обучение, онлайн, офлайн или мини пакетный
-            </summary>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.TrainOptimizer">
-            <summary>
-            Метод обчения SGD, Adam и т.п.
-            </summary>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.RandomSeed">
-            <summary>
-            Сид для генератора случайных чисел
-            </summary>
-        </member>
-        <member name="F:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.GradientClipValue">
-            <summary>
-            Gradient clipping to avoid gradient explosion, default 3
-            </summary>
-        </member>
-        <member name="P:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.Info">
-            <summary>
-            Neural network training information
-            </summary>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.#ctor(AI.ML.NeuralNetwork.CoreNNW.Models.IGraph,AI.ML.NeuralNetwork.CoreNNW.TrainType,AI.ML.NeuralNetwork.CoreNNW.Train.IOptimizer,System.Single,System.Single)">
-            <summary>
-            Creating a "trainer" for a neural network
-            </summary> 
-            <param name="graph">Graph of automatic differentiation</param>
-            <param name="trainType">Train type</param>
-            <param name="optimizer">Optimizer training method</param>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.Train(System.Int32,System.Single,System.Single,AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.GAN,AI.ML.NeuralNetwork.CoreNNW.DataStructs.DataSet,System.Single)">
-            <summary>
-            Network training
-            </summary>
-            <param name="trainingEpochs">Number of epochs</param>
-            <param name="learningRate">Learning rate</param>
-            <param name="network">Neural network</param>
-            <param name="data">Data set</param>
-            <param name="minLoss">Minimal loss value</param>
-            <returns>Loss</returns>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.PassOnline(System.Single,System.Single,AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.GAN,System.Collections.Generic.List{AI.ML.NeuralNetwork.CoreNNW.DataStructs.DataSequence},System.Boolean,AI.ML.NeuralNetwork.CoreNNW.Loss.ILoss)">
-            <summary>
-            Онлайн обучение
-            </summary>
-        </member>
-        <member name="M:AI.ML.NeuralNetwork.GenerativeAdversarialNetwork.Trainer.UpdateModelParams(AI.ML.NeuralNetwork.CoreNNW.Layers.INetwork,System.Single)">
-            <summary>
-            Обновление весов
-            </summary>
-            <param name="network">Сеть</param>
-            <param name="learningRate">Learning rate</param>
         </member>
         <member name="T:AI.ML.NeuralNetwork.HopfieldNet">
             <summary>
@@ -14768,7 +14736,7 @@
         </member>
         <member name="M:AI.Matrix.Max">
             <summary>
-            Максимальное значение матрицы
+            Maximum value(Matrix)
             </summary>
             <returns></returns>
         </member>
@@ -17296,37 +17264,35 @@
             <summary>
             Vector transformation
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса</param>
+            <param name="transformFunc">Transform function, function from index</param>
         </member>
         <member name="M:AI.Vector.TransformVectorInd(System.Func{System.Int32,System.Double,System.Double})">
             <summary>
             Transform vector
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса и значения
-            F(int i, double vect_i)</param>
+            <param name="transformFunc">Transform function, function from index and value F(int i, double vect_i)</param>
         </member>
         <member name="M:AI.Vector.TransformVectorX(AI.Vector,System.Func{System.Double,System.Double,System.Double})">
             <summary>
             Vector transformation (Use vector of arguments)
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от значения вектора аргументов и текущего вектора
+            <param name="transformFunc">Transform function, a function of the value of the vector of arguments and the current vector
             double F(double x_i, double vect_i)</param>
             <param name="x">Vector of arguments</param>
         </member>
-        <member name="M:AI.Vector.Normal">
+        <member name="M:AI.Vector.Scaling">
             <summary>
-            Нормализация, приводит вектор к диапазону 0-1
+            Scaling, brings the vector to a range of 0-1
             </summary>
-            <returns></returns>
         </member>
         <member name="M:AI.Vector.Max">
             <summary>
-            Максимальное значение
+            Maximum value
             </summary>
         </member>
         <member name="M:AI.Vector.MaxAbs">
             <summary>
-            Максимальное значение по модулю
+            Maximum value (abs)
             </summary>
         </member>
         <member name="M:AI.Vector.Min">
@@ -18022,20 +17988,19 @@
             <summary>
             Vector transformation
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса</param>
+            <param name="transformFunc">Transform function, function from index</param>
         </member>
         <member name="M:AI.VectorBoolean.TransformVectorInd(System.Func{System.Int32,System.Boolean,System.Boolean})">
             <summary>
             Vector transformation
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса и значения
-            F(int i, bool vect_i)</param>
+            <param name="transformFunc">Transform function, function from index  and value F(int i, bool vect_i)</param>
         </member>
         <member name="M:AI.VectorBoolean.TransformVectorX(AI.VectorBoolean,System.Func{System.Boolean,System.Boolean,System.Boolean})">
             <summary>
             Vector transformation (Use vector of arguments)
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от значения вектора аргументов и текущего вектора
+            <param name="transformFunc">Transform function, a function of the value of the vector of arguments and the current vector
             bool F(bool x_i, bool vect_i)</param>
             <param name="x">Вектор аргументов</param>
         </member>
@@ -18780,37 +18745,36 @@
             <summary>
             Vector transformation
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса</param>
+            <param name="transformFunc">Transform function, function from index</param>
         </member>
         <member name="M:AI.VectorFloat.TransformVectorInd(System.Func{System.Int32,System.Single,System.Single})">
             <summary>
             Vector transformation
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса и значения
-            F(int i, float vect_i)</param>
+            <param name="transformFunc">Transform function, function from index and value F(int i, float vect_i)</param>
         </member>
         <member name="M:AI.VectorFloat.TransformVectorX(AI.VectorFloat,System.Func{System.Single,System.Single,System.Single})">
             <summary>
             Vector transformation (Use vector of arguments)
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от значения вектора аргументов и текущего вектора
+            <param name="transformFunc">Transform function, a function of the value of the vector of arguments and the current vector
             float F(float x_i, float vect_i)</param>
             <param name="x">Вектор аргументов</param>
         </member>
         <member name="M:AI.VectorFloat.Normal">
             <summary>
-            Нормализация, приводит вектор к диапазону 0-1
+            Scaling, brings the vector to a range of 0-1
             </summary>
             <returns></returns>
         </member>
         <member name="M:AI.VectorFloat.Max">
             <summary>
-            Максимальное значение
+            Maximum value
             </summary>
         </member>
         <member name="M:AI.VectorFloat.MaxAbs">
             <summary>
-            Максимальное значение по модулю
+            Maximum value(Abs)
             </summary>
         </member>
         <member name="M:AI.VectorFloat.Min">
@@ -19597,37 +19561,37 @@
             <summary>
             Vector transformation
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса</param>
+            <param name="transformFunc">Transform function, function from index</param>
         </member>
         <member name="M:AI.VectorInt32.TransformVectorInd(System.Func{System.Int32,System.Int32,System.Int32})">
             <summary>
             Vector transformation
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от индекса и значения
+            <param name="transformFunc">Transform function, function from index and value
             F(int i, int vect_i)</param>
         </member>
         <member name="M:AI.VectorInt32.TransformVectorX(AI.VectorInt32,System.Func{System.Int32,System.Int32,System.Int32})">
             <summary>
             Vector transformation (Use vector of arguments)
             </summary>
-            <param name="transformFunc">Функция преобразования, фунция от значения вектора аргументов и текущего вектора
+            <param name="transformFunc">Transform function, a function of the value of the vector of arguments and the current vector
             int F(int x_i, int vect_i)</param>
             <param name="x">Вектор аргументов</param>
         </member>
         <member name="M:AI.VectorInt32.Normal">
             <summary>
-            Нормализация, приводит вектор к диапазону 0-1
+            Scaling, brings the vector to a range of 0-1
             </summary>
             <returns></returns>
         </member>
         <member name="M:AI.VectorInt32.Max">
             <summary>
-            Максимальное значение
+            Maximum value
             </summary>
         </member>
         <member name="M:AI.VectorInt32.MaxAbs">
             <summary>
-            Максимальное значение по модулю
+            Maximum value (Abs)
             </summary>
         </member>
         <member name="M:AI.VectorInt32.Min">
