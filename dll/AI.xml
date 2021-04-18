@@ -4786,7 +4786,7 @@
             F measure formula: (1+beta^2) * recall * precision / (recall + beta^2 * precision)
             </summary>
         </member>
-        <member name="M:AI.ML.AlgorithmAnalysis.MetricsForClassification.FullReport(System.Int32[],System.Int32[],System.Int32,System.Double,System.Boolean)">
+        <member name="M:AI.ML.AlgorithmAnalysis.MetricsForClassification.FullReport(System.Int32[],System.Int32[],System.Double,System.Boolean)">
             <summary>
             Complete classifier metrics report
             </summary>
