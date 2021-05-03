@@ -4885,6 +4885,24 @@
             </summary>
             <param name="path">File path</param>
         </member>
+        <member name="M:AI.ML.Classifiers.NeuralClassifier.#ctor(AI.ML.NeuralNetwork.CoreNNW.Layers.NNW)">
+            <summary>
+            
+            </summary>
+            <param name="net"></param>
+        </member>
+        <member name="M:AI.ML.Classifiers.NeuralClassifier.Classify(AI.Vector)">
+            <summary>
+            Classify
+            </summary>
+            <param name="inp">Input vector</param>
+        </member>
+        <member name="M:AI.ML.Classifiers.NeuralClassifier.ClassifyProbVector(AI.Vector)">
+            <summary>
+            Classify
+            </summary>
+            <param name="inp">Input vector</param>
+        </member>
         <member name="T:AI.ML.Classifiers.IClassifier">
             <summary>
             Интерфейс для работы классификаторов
@@ -5256,6 +5274,11 @@
             Distance function
             </summary>
         </member>
+        <member name="P:AI.ML.Clustering.KMeans.Clusters">
+            <summary>
+            Clusters array
+            </summary>
+        </member>
         <member name="M:AI.ML.Clustering.KMeans.Classify(AI.Vector)">
             <summary>Classify vector</summary>
             <param name="vector">Vector</param>
@@ -5306,6 +5329,34 @@
             <summary>
             Distance function
             </summary>
+        </member>
+        <member name="P:AI.ML.Clustering.IClustering.Clusters">
+            <summary>
+            Clusters array
+            </summary>
+        </member>
+        <member name="T:AI.ML.Clustering.KohonenSelfOrganizingMap">
+            <summary>
+            Kohonen self-organizing map
+            </summary>
+        </member>
+        <member name="P:AI.ML.Clustering.KohonenSelfOrganizingMap.Clusters">
+            <summary>
+            Clusters array
+            </summary>
+        </member>
+        <member name="M:AI.ML.Clustering.KohonenSelfOrganizingMap.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Kohonen self-organizing map
+            </summary>
+        </member>
+        <member name="M:AI.ML.Clustering.KohonenSelfOrganizingMap.Classify(AI.Vector)">
+            <summary>Classify vector</summary>
+            <param name="vector">Vector</param>
+        </member>
+        <member name="M:AI.ML.Clustering.KohonenSelfOrganizingMap.Classify(System.Collections.Generic.IEnumerable{AI.Vector})">
+            <summary>Classify vectors</summary>
+            <param name="vectors">Vectors</param>
         </member>
         <member name="T:AI.ML.CrossCorrMatrix">
             <summary>
@@ -5478,7 +5529,7 @@
             </summary>
             <param name="dim">Dimention</param>
         </member>
-        <member name="M:AI.ML.Datasets.SyntheticDatasets.PointClouds.AddCloud(System.Int32,AI.Vector,AI.ML.Datasets.SyntheticDatasets.PointClouds.CloudType)">
+        <member name="M:AI.ML.Datasets.SyntheticDatasets.PointClouds.AddCloud(System.Int32,AI.Vector,AI.ML.Datasets.SyntheticDatasets.PointClouds.CloudType,AI.Vector)">
             <summary>
             Add point cloud
             </summary>
@@ -17115,7 +17166,7 @@
             Convert a vector to a one-hot representation
             </summary>
         </member>
-        <member name="M:AI.Vector.MaxOutVector">
+        <member name="M:AI.Vector.MaxOutVector(System.Double,System.Double)">
             <summary>
             Getting a vector with one at the index position with the maximum value and -1 at the rest
             </summary>
