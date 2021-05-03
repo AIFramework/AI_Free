@@ -1,6 +1,8 @@
 # AIFramework версия 2.1 Free
 Публичная версия ИИ фреймворка
 
+* Добавлена реализация классификатора с безытеративным обучением, код библиотеки, тесты и описание тут: [NonIterativeClassifier](https://github.com/AIFramework/NonIterativeClassifier)
+
 * ### Многие ссылки были удалены, т.к. документация устарела, сейчас идет составление новой
 
 * ### [Пакет NuGet](https://www.nuget.org/packages/AI)
