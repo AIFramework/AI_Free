@@ -3,6 +3,7 @@
 #### Contributors:
 * Zahar A. Ponimash 
 * Potanin Marat
+* Arthur Matsur
 
 LICENSE:
 CC BY-ND 4.0
@@ -11,7 +12,7 @@ CC BY-ND 4.0
 ### Acknowledgments:
 
 * We express our gratitude to Arthur Matsur for help in implementing asynchronous learning and saving checkpoints.
-
+* We express our gratitude to dplgp for creating a new project logo.
 ---------------------------------------
 
 * The part of source code of neural networks was taken from this repository. It is licensed under the MIT license.
