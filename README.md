@@ -1,4 +1,4 @@
-## AIFramework версия 2.1 Free
+## AIFramework версия 2.2 Free
 Публичная версия ИИ фреймворка
 
 
